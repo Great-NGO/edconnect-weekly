@@ -5,72 +5,118 @@
     <meta charset="utf-8">
     <title>Profile Page</title>
 
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+
 </head>
 
 <body>
 
-      <h1>Project Explorer</h1>
-    <h2>One Stop Database for Final Year Projects</h2>
+    <nav>
+        <a href="index.html">Project Explorer</a>
+        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
+        <button type="submit">Search</button>
+        <a href="search.html">Projects</a>
+        <a href="createProject.html" ">Submit</a>
+                    <a href=" login.html">Login</a>
+        <a href="register.html">Sign Up</a>
 
-    <div id="menu">
-        &emsp; <a href="#" align="center">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+    </nav>
+
+
+    <div class="Item">
+        <h2>Ade Bolade <span style="font-weight: normal;">&nbsp;test@edconnect.ng </span> </h2>
+        <ul>
+            <li class="flex-item"> Program <br><strong>Computer Science</strong></li>
+            <li class="flex-item"> Matriculation number <br><strong>00/0000</strong></li>
+            <li class="flex-item"> Graduation Year <br><strong>2019</strong></li>
+        </ul>
     </div>
 
-    <h3>Ade Bolade</h3>
+    <h3 class="prof">Update Profile</h3>
 
-    <p>test@edconnect.ng</p>
-    <ul>
-        <li> Program: Computer Science</li>
-        <li> Matriculation: 00/0000</li>
-        <li> Graduation Year: 2019</li>
-    </ul>
+    <div class="Upd-Prof">
 
-    <h3>Update Profile</h3>
-    <form action="" method="POST">
-        <p>First Name: <br> <input type="text"></p>
-        <p>Last Name: <br> <input type="text"></p>
-        <p>Email Address: <br> <input type="email"></p>
-        <p>Password: <br> <input type="password"></p>
-        <p>Matric Number:<br> <input type="text"></p>
-        <p>Program: <br> <select name="program">
-        
-                <option>Computer Science</option>
-        
-            </select>
-        </p>
-        <p>Graduation Year: <br> <select name="year">
-        
-                <option>2019</option>
-                <option>2020</option>
-                <option>2018</option>
-                <option>2017</option>
-                <option>2016</option>
-                <option>2015</option>
-                <option>2014</option>
-                <option>2013</option>
-                <option>2012</option>
-                <option>2011</option>
-                <option>2010</option>
-        
-            </select>
-        </p>
-        
-        <input type="submit" name="submit" id="submit">
-    
-    </form>
+        <div class="prof-row">
+            <div class="prof-item">
+                <label>
+                    First Name:
+                </label>
+                <input type="text" placeholder="First name">
+            </div>
+            <div class="prof-item">
+                <label>
+                    Last Name:
+                </label> <input type="text" placeholder="Last name">
+            </div>
+        </div>
+        <div class="prof-row">
+            <div class="prof-item">
+                <label> Email Address: </label> <input type="email" placeholder="Your Email address">
+            </div>
+            <div class="prof-item">
+                <label>Program:</label> <select name="program">
 
-    <h3>Change Password</h3>
-    <form action="" method="POST">
-        <p>Current Password: <br> <input type="password"></p>
-        <p>New Password: <br> <input type="password"></p>
-        <p>Confirm Password: <br> <input type="password"></p>
+                    <option>Choose...</option>
+                    <option>Computer Science</option>
 
-        <input type="submit" name="submit" id="submit">
-    </form>
+                </select>
+            </div>
+        </div>
+        <div class="prof-row">
+            <div class="prof-item">
+                <label> Matriculation Number: </label> <input type="text" placeholder=" 00/0000">
+            </div>
 
+            <div class="prof-item">
+                <label> Graduation Year: </label> <select name="year">
+
+                    <option>Choose...</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+
+                </select>
+
+            </div>
+        </div>
+        <div class="prof-row">
+            <input type="submit" name="submit" id="UPprof" value="Update Profile">
+        </div>
+    </div>
+
+    <h3 class="prof">Change Password</h3>
+
+    <div class="Upd-Prof">
+        <div class="prof-psw-row">
+            <!--  <form action="" method="POST"> -->
+            <div class="prof-item">
+                <label>Current Password: </label> <input type="password" placeholder="Current Password"> 
+            </div>
+            <div class="prof-item">
+                <label>New Password: </label> <input type="password" placeholder="Your new password">
+            </div>
+            <div class="prof-item">
+                <label> Password: </label> <input type="password" placeholder="Confirm new password">
+            </div>
+        </div>
+        <div class="prof-psw-row">
+            <input type="submit" name="submit" id="C-Pswd" value="Change Password">
+        </div>
+        <!--  </form> -->
+    </div>
+
+
+    <footer>
+        <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+    </footer>
 </body>
 
 </html>

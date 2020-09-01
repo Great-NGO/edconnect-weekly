@@ -5,51 +5,90 @@
     <meta charset="utf-8">
     <title>SignUp Page</title>
 
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
+
 </head>
 
 <body>
 
-  
-    <h1>Project Explorer</h1>
-    <h2>One Stop Database for Final Year Projects</h2>
+    <nav>
+        <a href="index.html">Project Explorer</a>
+        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
+        <button type="submit">Search</button>
+        <a href="search.html">Projects</a>
+        <a href="createProject.html" ">Submit</a>
+                    <a href=" login.html">Login</a>
+        <a href="register.html">Sign Up</a>
 
-    <div id="menu">
-        &emsp; <a href="#" align="center">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+    </nav>
+
+    <div class="reg">
+        <div class="reg-row">
+            <h2 style="font-size: 30px">Sign up</h2>
+        </div>
+        <div class="reg-row">
+            <div class="form-item">
+                <label>
+                   First Name:
+                </label>
+                <input type="text" placeholder="First name">
+            </div>
+            <div class="form-item">
+                <label>
+                    Last Name:
+                </label> <input type="text" placeholder="Last name">
+            </div>
+        </div>
+        <div class="reg-row">
+            <div class="form-item">
+               <label> Email Address: </label> <input type="email" placeholder="Your Email address">
+            </div>
+            <div class="form-item">
+               <label> Password: </label> <input type="password" placeholder="Your Password">
+            </div>
+        </div>
+        <div class="reg-row">
+            <div class="form-item" style="flex:2">
+                <label>Program:</label> <select name="program">
+            
+                    <option>Choose...</option>
+                    <option>Computer Science</option>
+            
+                </select>
+            </div>
+
+            <div class="form-item">
+               <label> Matriculation Number: </label> <input type="text" placeholder="e.g. 16/2020">
+            </div>
+            
+            <div class="form-item">
+                <label> Graduation Year: </label> <select name="year">
+
+                    <option>Choose...</option>
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                    <option>2015</option>
+                    <option>2014</option>
+                    <option>2013</option>
+                    <option>2012</option>
+                    <option>2011</option>
+                    <option>2010</option>
+
+                </select>
+
+            </div>
+        </div>
+        <div class="reg-row">
+            <input type="submit" name="submit" id="signup" value="Sign up">
+        </div>
     </div>
 
-    <h2>Login</h2>
-    <p>First Name: <input type="text"></p>
-    <p>Last Name: <input type="text"></p>
-    <p>Email Address: <input type="email"></p>
-    <p>Password: <input type="password"></p>
-    <p>Matric Number: <input type="text"></p>
-    <p>Program: <select name="program">
-        
-            <option>Computer Science</option>
-           
-        </select> 
-    </p>
-    <p>Year of Graduation: <select name="year">
-        
-            <option>2020</option>
-            <option>2019</option>
-            <option>2018</option>
-            <option>2017</option>
-            <option>2016</option>
-            <option>2015</option>
-            <option>2014</option>
-            <option>2013</option>
-            <option>2012</option>
-            <option>2011</option>
-            <option>2010</option>
-           
-        </select> 
-    </p>
-
-    <input type="submit" name="submit" id="submit">
+    <footer>
+        <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+    </footer>
 
 </body>
 

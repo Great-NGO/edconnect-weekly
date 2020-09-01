@@ -4,50 +4,77 @@
         <meta charset="utf-8">
         <title>Home Page</title>
 
+        <link rel="stylesheet" type="text/css" href="Css/style.css">
     </head>
 
     <body>
+    <nav>
+        <a href="index.html">Project Explorer</a>
+        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
+        <button type="submit">Search</button>
+        <a href="search.html">Projects</a>
+        <a href="createProject.html" ">Submit</a>
+                    <a href=" login.html">Login</a>
+        <a href="register.html">Sign Up</a>
     
-        <h1>Project Explorer</h1>
-        <h2>One Stop Database for Final Year Projects</h2>
+    </nav>
 
-        <div id="menu">
-        &emsp; <a href="#" align="center">Home</a>
-            <a href="#">Projects</a>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+        <div class="container">
+                <div class="jumbotron">
+                    <h1>Welcome to Project Explorer</h1>
+                    <p>Project Explorer is a repository for final year projects across all departments at your institution. You can upload
+                        and search projects and learn from others.</p>
+                
+                        
+                        <a href="#" class="button">Get Started</a>
+                        <a href=login.html class="button">Login</a>
+                            
+                        
+                </div>
         </div>
 
-        <h2>Welcome to Project Explorer</h2>
-        <p>Project Explorer is a repository for final year projects across all departments at your institution. You can upload and search projects and learn from others.</p>
+        <br> <h2 style="text-align:center; color: rgb(70, 99, 161);">Project List</h2>
+
+        <div class="projectList">
+
+        <div class="list">
+                <ul>
+                    <h3>Project 1</h3>
+
+                    <li> Name: Project 1</li>
+                    <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate vitae libero?</li>
+                    <li> Program: Computer Science</li>
+                    <li> Year: 2019</li>
+                </ul>
+        </div>
+        <div class="list">
+                <ul>
+                    <h3>Project 2</h3>
+
+                    <li> Name: Project 2</li>
+                    <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate libero?</li>
+                    <li> Program: Public Health</li>
+                    <li> Year: 2015</li>
+                </ul>
+        </div>
+        <div class="list">
+            <ul>
+                <h3>Project 3</h3>
+
+                <li> Name: Project 3</li>
+                <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum enetur, repudiandae quasi sint expedita libero?</li>
+                <li> Program: Mass Communication</li>
+                <li> Year: 2020</li>
+            </ul>
+         </div>
+
+        </div>
+
+        <footer>
+            <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+        </footer>
+
         
-        <h2>Project List</h2>
-
-        <h3>Project 1</h3>
-            <ul>
-                <li> Name: Project 1</li>
-                <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate vitae libero?</li>
-                <li> Program: Computer Science</li>
-                <li> Year: 2019</li>
-            </ul>
-
-        <h3>Project 2</h3>
-            <ul>
-                <li> Name: Project 2</li>
-                <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate libero?</li>
-                <li> Program: Public Health</li>
-                <li> Year: 2015</li>
-            </ul>
-
-         <h3>Project 3</h3>
-         <ul>
-             <li> Name: Project 3</li>
-             <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum enetur, repudiandae quasi sint expedita libero?</li>
-             <li> Program: Mass Communication</li>
-            <li> Year: 2020</li>
-        </ul>
-
-
 
     </body>
 </html>

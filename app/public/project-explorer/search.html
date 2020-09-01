@@ -5,40 +5,96 @@
     <meta charset="utf-8">
     <title>Search Page</title>
 
+    <link rel="stylesheet" type="text/css" href="Css/style.css">
 </head>
 
 <body>
 
-    <h1>Project Explorer</h1>
-    <h2>One Stop Database for Final Year Projects</h2>
+    <nav>
+        <a href="index.html">Project Explorer</a>
+        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
+        <button type="submit">Search</button>
+        <a href="search.html">Projects</a>
+        <a href="createProject.html" ">Submit</a>
+                    <a href=" login.html">Login</a>
+        <a href="register.html">Sign Up</a>
 
-    <div id="menu">
-        &emsp; <a href="#" align="center">Home</a>
-        <a href="#">Projects</a>
-        <a href="#">Submit</a>
-        <a href="#">Login</a>
-        <a href="#">Register</a>
+    </nav>
+
+    <h2 class="Prof">Project Gallery</h2>
+
+    <div class="search-nav">
+
+        <div class=searchItems><input type="text" id="S-input"
+                placeholder="Search project name, authors, abstract, tags"> </div>
+        <div class="searchItems"> <label for="searchBY">Search by </label> <select name="program">
+
+                <option>Name</option>
+                <option>Great Nwamadi</option>
+
+            </select>
+        </div>
+        <div class="searchItems">
+            <input type="submit" name="Search" id="Search" value="Submit">
+        </div>
     </div>
 
-    <h2>Search Project By</h2>
+    <h2 class="Prof">All Results<span style="font-weight: normal; font-size: 17px; color: gray; margin-top: 5px;"> &nbsp;(4 results)</span></h2>
 
-    <p>Project Title: <br> <input type="text"></p>
-    <p>Project Abstract: <br> <input type="text"></p>
-    <p>Authors: <br> <input type="text"></p>
-    <p>Tags(s): <br> <input type="text"></p>
-    
-    <input type="submit" name="Search" id="Search" value="Search">
+    <div class="Srch">
+        <div class="S-list">
 
-    <h2>Search Result</h2>
+            <ul>
+                <h3>Project 4</h3>
 
-    <h3>Project 4</h3>
-    <ul>
-        <li> Name: Project 4</li>
-        <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam.</li>
-        <li> Program: Computer Science</li>
-        <li> Authors: Ade Ade, Brian James</li>
-        <li> Tag(s): #yaml, #cjs</li>
-    </ul>
+                <li> Great-NGO, Okey N.</li> <br>
+                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui laborum repellendus nihil
+                    corrupti, architecto repudiandae error nesciunt, recusandae aliquam excepturi consequuntur
+                    </li> <br>
+                <li class="tags"> #yaml, #cjs</li>
+            </ul>
+        </div>
+        <div class="S-list">
+
+            <ul>
+                <h3>Project 3</h3>
+                <li> Henry James, Bola Ade</li> <br>
+                <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt soluta aut id earum suscipit
+                    nostrum repellendus beatae in non ratione illo velit nisi, molestias, amet itaque aspernatur eos
+                    </li> <br>
+                <li class="tags"> #css, #html</li>
+            </ul>
+        </div>
+
+        <div class="S-list">
+            <ul>
+                <h3>Project 2</h3>
+                <li> Ade Ade, Tola Daniel</li> <br>
+                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus iure totam architecto,
+                    aspernatur enim dolore sed minus, pariatur nostrum sit nobis in sapiente eos voluptas est
+                    </li> <br>
+                <li class="tags"> #ejs, #ci</li>
+            </ul>
+        </div>
+
+        <div class="S-list">
+
+            <ul>
+                <h3>Project 1</h3>
+                <li> Oakman, Brian James</li> <br>
+                <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet voluptates fugit laboriosam
+                    necessitatibus saepe nisi ex minus aut, et dicta est recusandae esse ducimus temporibus veniam
+                    </li> <br>
+                <li class="tags"> #javascript #mongodb</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <footer>
+        <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+    </footer>
 
 </body>
 

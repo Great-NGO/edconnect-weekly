@@ -56,17 +56,17 @@ nav a:nth-of-type(4){
   margin-right: 20px;
 }     /* End of Nav Styling */
 
-/* Container - Jumbotron styling */
+/* Index.html   Container - Jumbotron styling */
 .container{
   display: flex;
   border-style: hidden;
-  width: 1100px;
+  max-width: 1100px;
   margin: 15px auto;
-  
   background-color: black;
 }
 
 .jumbotron{
+  flex: 1;
   background-color: gainsboro;
   padding: 30px;
 }
@@ -111,19 +111,24 @@ a.button:last-child:hover{
 
 /* Styling the Project List boxes */
 .projectList{
-  display: flex;
-  width: 1100px;
+  max-width: 1100px;
   margin: 15px auto;
-flex-direction: row-reverse; 
-  justify-content: space-between;
+}
+
+@media (min-width:850px) {
+  .projectList{
+      display: flex;
+     justify-content: space-between;
+      flex-direction: row-reverse; 
+  }
 }
 
 .list{
+  padding: 10px;
   box-sizing: border-box;
   border: 1px solid gainsboro;
   box-shadow: 0 0 2px 2px gainsboro ;
-  width: 300px;
-  
+  flex-basis: 30%;
 }
 
 .list ul{
@@ -135,26 +140,372 @@ flex-direction: row-reverse;
 
 /*Footer styles*/
 footer{
+  display: flex;
   height: 50px;
-  width: 1100px;
-  margin: 100px auto 0 auto;
+  max-width: 1100px;
+  margin: 70px auto 0 auto;
   background-color: gainsboro;
+  justify-content: flex-end;
 }
 
 footer p{
-  float: right;
   padding-right: 15px;
 }     /* End of Footer styles*/
 
 /* Login.html styles */
-.Login{
+.Login-container{
+  padding-left: 1px;
+  border: none;
   display: flex;
-  border-style: hidden;
+  flex-direction: column;
+  margin: 50px auto 0 auto;
+  margin-bottom: 0;
+  width: 500px;
+  padding-bottom: 5px;
   
+}
+/* Styling the login form */
+.login-row label{
+ font-size: 20px;
+
+}
+.login-row h2{
+  font-size: 30px;
+  margin-bottom: 13px;
+}
+.login-row input{
+  height: 30px;
+  width: 98%;
+  border-radius: 5px;
+  margin-top: 0px ;
+  font-size: medium;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro;
+}
+.login-row input#log{
+  width: 80px;
+  height: 40px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 17px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 500ms;
+}
+
+/* Styling the Register.html page */
+.reg{
+  max-width: 800px; /* 50px */
+  margin: 30px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.reg-row h2{
+  margin: 0;
+}
+.reg-row{
+  display: flex;
+  margin-bottom: 10px;
+  align-items: stretch;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.reg-row input, select{
+  height: 30px;
+  border: 1px solid gainsboro;
+ 
+  box-shadow: 0 0 2px 2px solid gainsboro;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.form-item{
+  display: grid;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.reg-row #signup{
+  width: 70px;
+  height: 35px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 500ms;
+} 
+.reg-row #signup:hover{
+    height: 37px;
+    width: 72px;
+    background-color: steelblue;
+}
+
+/* Style for Profile.html */
+div.Item h2{
+  margin: 10px auto;
+ display: flex;
+ max-width: 1100px;
+  padding: 5px;
 
 }
 
+div.Item ul{
+  max-width: 1100px;
+  margin:  0 auto;
+  display: flex;
+  background-color: gainsboro;
+  border: none;
+  list-style-type: none;
+  justify-content: flex-start;
+}
+div.Item ul li{
+  margin: 0.5em;
+ flex-basis: 30%;
+}
 
-@media(orientation:landscape) and (min-width:750px){
+/* Update Profile under profile.html */
+h3.prof{
+  margin: 10px auto;
+ display: flex;
+ max-width: 1100px;
+  padding: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid gainsboro;
+  box-shadow: 0 2px gainsboro;
+}
+.Upd-Prof{
+  max-width: 800px; /* 50px */
+  margin: 30px auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.prof-row {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: stretch;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.prof-row input, select{
+  height: 30px;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 2px 2px solid gainsboro;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 5px;
+}
+
+.prof-item{
+  display: grid;
+  margin-right: 10px;
+  flex: 1;
+}
+
+.prof-row #UPprof{
+  height: 45px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 500ms;
+} 
+.prof-row #UPprof:hover{
+    height: 47px;
+    background-color: steelblue;
+}
+
+.prof-psw-row { 
+  display: flex;
+  margin-bottom: 10px;
+  align-items: stretch;
+  font-size: 20px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+
+}
+.prof-psw-row input, select{
+  height: 30px;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 2px 2px solid gainsboro;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-left: 5px;
+}
+.prof-psw-row #C-Pswd{
+   height: 40px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 15px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 500ms;
+}
+
+.prof-psw-row #C-Pswd:hover{
+    height: 42px;
+    background-color: steelblue;
+}
+
+/* Styling for Search.html */
+div.search-nav{
+   max-width: 1100px;
+  margin:  0 auto;
+  display: flex;
+  background-color: gainsboro;
+  border: none;
+  justify-content: space-evenly;
+  align-items: ;
+  flex-wrap: wrap;
+}
+input#S-input{
+ 
+  min-width: 430px;
+  max-width: 500px;
+  margin-bottom: 15px;
+  height: 20px;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+  padding: 7px;
+  font-size: 15px;
+}
+div.search-nav .searchItems{
+
+  height: 35px;
+  margin: 10px;
   
+  
+}
+div.searchItems:nth-child(2){
+  font-size: 25px;
+ border: 1px solid gainsboro;
+
+ margin-left: 0;
+  padding: 0;
+}
+div.searchItems:nth-child(2)select{
+ 
+}
+.searchItems #Search{
+ 
+  height: 32px;  width: 73px;
+  background-color: steelblue;  color: white;
+  border: none; border-radius: 5px;
+  font-size: 15px; display: inline-block;
+  box-shadow: 0 1px gainsboro;
+  cursor: pointer;
+  transition-duration: 500ms;
+}
+.searchItems #Search:hover{
+    height: 34px;
+    background-color: steelblue;
+}
+
+div.search-nav .searchItems label{
+  height: 30px;
+  padding: 6px;
+  font-size: medium;
+  background-color: #959595;
+  border-radius: 5px;
+  border: none;
+  margin-right: 1px;
+  box-shadow: 0 0 1px 1px white;
+}
+
+/* Styling for the Project List under Search.html */
+.Srch{
+  max-width: 1100px;
+  margin: 15px auto;
+   
+   
+}
+
+@media (min-width:850px) {
+  .Srch{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    
+  }
+}
+
+.S-list{
+ 
+  margin: 10px;
+
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro ;
+  flex-basis: 30%;
+}
+
+.S-list ul{
+  list-style-type: none;
+  font-weight: normal;
+  color: black;
+  font-size: 17px;
+
+}
+
+.S-list ul li:first-of-type{
+  color: gray;
+ 
+}
+.S-list h3, .tags{
+  color: rgb(70, 99, 161);
+  font-weight: bold;
+}
+
+h2.Prof{
+  margin: 20px auto;
+ display: flex;
+ max-width: 1100px;
+  padding: 5px;
+  padding-bottom: 5px;
+  
+}
+.S-list h3{
+  margin-bottom: 8px;
+}
+
+
+/* Responsive Styling for our navbar*/
+@media (max-width:750px){
+#search_term{
+  
+    display: none;
+  }
+}
+
+@media (max-width:530px){
+
+  button{
+    display: none;
+  }
+  nav {
+    height: 35px;
+  }
+  nav a:nth-of-type(4), nav a:nth-of-type(5){
+    float: none;
+  }
+
 }
