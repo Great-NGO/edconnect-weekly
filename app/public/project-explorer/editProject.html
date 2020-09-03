@@ -3,48 +3,77 @@
 
 <head>
     <meta charset="utf-8">
+
     <title>Edit Profile Page</title>
 
-    <!--   <style type="text/css" >
-        body{
-            margin: 0 10%;
-        }
-    </style>
-     -->
+
     <link rel="stylesheet" type="text/css" href="Css/style.css">
 </head>
 
 <body>
 
     <nav>
-        <a href="index.html">Project Explorer</a>
+        <a href="index.html"><label>Project Explorer</label></a>
         <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
         <button type="submit">Search</button>
         <a href="search.html">Projects</a>
         <a href="createProject.html" ">Submit</a>
-                    <a href=" login.html">Login</a>
+                            <a href=" login.html">Login</a>
         <a href="register.html">Sign Up</a>
-
+    
     </nav>
 
-    <h3>Project 4</h3>
-    <ul>
-        <li> Created By: Ade Ade</li>
-        <li> Date Created: 03/03/2020</li>
-        <li> Last Updated: 04/04/2020</li>
-    </ul>
+    <div class="E-Item">
+        <h2>Project 4</h2>
+        <ul>
+            <li> Created By <br> <strong>Great-NGO</strong></li>
+            <li> Date Created <br> <strong>2020-09-03</strong></li>
+            <li> Last Updated <br> <strong> 2020-09-03</strong></li>
+            <li> <a href="viewProject.html" id="vP-btn">View Project</a> </li>
+        </ul>
+    </div>
 
+    <main class="flex-container">
+        <div class="column-1">
+            <div class="col1-row">
+                <h3>Edit Project</h3>
 
-    <h3>Edit Project</h3>
+                <label>Project name </label>
+                <p><input type="text" placeholder="Project 4"></p>
+            </div>
+            <div class="col1-row">
+                <label>Project abstract </label>
+                <p><textarea>Lorem ipsum dolor sit amet lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cum doloribus corporis, alias repellat et iste similique dolore nulla! Porro ex quas doloribus id dolor pariatur labore accusamus architecto ipsam! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugiat sapiente minima sed harum consequuntur iusto, possimus cum quaerat asperiores sequi minus officiis quia provident beatae, odit reiciendis aperiam pariatur.</textarea>
+                </p>
+            </div>
+            <div class="col1-row">
+                <label>Authors </label>
+                <p><input type="text" placeholder="Ade Ade, Brian James"></p>
+            </div>
+            <div class="col1-row">
+                <label>Tags(s) </label>
+                <p><input type="text" placeholder="#yaml, #ejs"></p>
 
-    <p>Project name: <br> <input type="text" placeholder="Project 4"></p>
-    <p>Project Abstract: <br> <textarea>Lorem ipsum dolor sit amet</textarea></p>
-    <p>Authors: <br> <input type="text" placeholder="Ade Ade, Brian James"></p>
-    <p>Tags(s): <br> <input type="text" placeholder="#yaml, #ejs"></p>
+                <input type="submit" name="submit" id="save" value="Save">
+            </div>
+        </div>
 
-    <p>Add Project File: <br> <input type="file"></p>
+        <div class="column-2">
+            <div class="col2-row">
+                <h3>Manage Project files</h3>
+                <input type="file" class="custom-file-input">
+                       
+            </div>
+            <div class="col2-row" ">
+                <div class="projFiles" >
+                    <p style="background-color:gainsboro; ">Project files </p>
+                <p>No file uploaded yet</p>
 
-    <input type="submit" name="submit" id="submit">
+                </div>
+            </div>
+        </div>
+
+    </main>
 
     <footer>
         <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>

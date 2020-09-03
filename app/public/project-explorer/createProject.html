@@ -11,24 +11,38 @@
 <body>
 
     <nav>
-        <a href="index.html">Project Explorer</a>
+        <a href="index.html"><label>Project Explorer</label></a>
         <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
         <button type="submit">Search</button>
         <a href="search.html">Projects</a>
         <a href="createProject.html" ">Submit</a>
-                    <a href=" login.html">Login</a>
+                            <a href=" login.html">Login</a>
         <a href="register.html">Sign Up</a>
-
+    
     </nav>
 
-    <h2>Submit Project By</h2>
+    <div class="cP-body">
+        <div class="cP-row">
+            <h2>Submit Project</h2>
+            <label for="projectName"> Project name</label>
+            <p><input type="text" placeholder="Enter project name"></p>
+        </div>
+        <div class="cP-row">
+            <label>Project abstract </label>
+            <p><textarea> </textarea></p>
+        </div>
+        <div class="cP-row">
+            <label>Authors </label>
+            <p> <input type="text" placeholder="Enter author names (separated by comma)"></p>
+        </div>
+        <div class="cP-row">
+            <label>Tags(s) </label>
+            <p><input type="text" placeholder="Use # to tag project with different topics (e.g. #javascript #mongoDB)"></p>
+            
+            <input type="submit" name="submit" id="cont" value="Continue">
+        </div>
 
-    <p>Project Name: <br> <input type="text"></p>
-    <p>Project Abstract: <br> <textarea> </textarea></p>
-    <p>Authors: <br> <input type="text"></p>
-    <p>Tags(s): <br> <input type="text"></p>
-
-    <input type="submit" name="submit" id="submit">
+    </div>
 
     <footer>
         <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>

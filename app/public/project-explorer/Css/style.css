@@ -160,7 +160,7 @@ footer p{
   flex-direction: column;
   margin: 50px auto 0 auto;
   margin-bottom: 0;
-  width: 500px;
+  max-width: 500px;
   padding-bottom: 5px;
   
 }
@@ -434,11 +434,9 @@ div.search-nav .searchItems label{
 /* Styling for the Project List under Search.html */
 .Srch{
   max-width: 1100px;
-  margin: 15px auto;
-   
-   
+  margin: 15px auto;   
 }
-
+/* To ensure the container is responsive */
 @media (min-width:850px) {
   .Srch{
       display: flex;
@@ -487,8 +485,270 @@ h2.Prof{
   margin-bottom: 8px;
 }
 
+/* Styling for createproject.html */
+.cP-body{
+  padding-left: 3px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto;
+  margin-bottom: 0;
+  max-width: 700px;
+  padding: 5px;
 
-/* Responsive Styling for our navbar*/
+}
+
+/* Styling the login form */
+.cP-row label{
+ font-size: 20px;
+ font-weight: 500;
+
+}
+.cP-row h2{
+  font-size: 30px;
+  margin-bottom: 13px;
+}
+.cP-row input{
+  height: 30px;
+  width: 98%;
+  padding-left: 8px;
+  border-radius: 3px;
+  margin-top: 0px ;
+  font-size: medium;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro;
+}
+.cP-row textarea{
+  height: 200px;
+  width: 98%;
+  padding-left: 8px;
+  border-radius: 3px;
+  margin-top: 0px ;
+  font-size: medium;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro;
+
+}
+.cP-row input#cont{
+  width: 85px;
+  height: 42px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 17px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;   margin-bottom: 5px;
+  transition-duration: 500ms;
+}
+.cP-row input#cont:hover{
+  height: 44px;
+  box-shadow: 0 3px black ;
+  
+}
+
+/* Styling for editProject.html */
+div.E-Item h2{
+  margin: 10px auto;
+ display: flex;
+ max-width: 1100px;
+
+}
+
+div.E-Item ul{
+  max-width: 1100px;
+  height: 60px;
+  margin:  0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  background-color: gainsboro;
+  border: none;
+  list-style-type: none;
+  justify-content: flex-start;
+}
+div.E-Item ul li{
+  margin: 0.5em;
+ flex-basis: 30%;
+}
+
+#vP-btn{
+  float: right;
+  max-width: 100px;
+  margin-right: 10px;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  background-color: #4343a3;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 17px;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition-duration: 500ms;
+}
+
+/* Styling for the flex-container in editProject.html */
+main.flex-container{
+  
+
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (min-width:850px){
+  main.flex-container{
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+}
+/* Styling the column-1 form section */
+.column-1{
+  padding-left: 3px;
+  border: none;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1;
+  padding: 5px;
+  
+}
+
+.col1-row label{
+ font-size: 20px;
+ font-weight: 500;
+
+}
+.col1-row h3, .col2-row h3{
+  font-size: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #c2c2c2;
+}
+.col1-row input{
+  height: 30px;
+  width: 98%;
+  padding-left: 8px;
+  border-radius: 3px;
+  margin-top: 0px ;
+  font-size: medium;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro;
+}
+.col1-row textarea{
+  height: 130px;
+  width: 98%;
+  padding-left: 8px;
+  border-radius: 3px;
+  margin-top: 0px ;
+  font-size: medium;
+  border: 1px solid gainsboro;
+  box-shadow: 0 0 1px 1px gainsboro;
+
+}
+.col1-row input#save{
+  width: 80px;
+  height: 40px;
+  background-color: steelblue;
+  color: white;
+  border: none; border-radius: 5px;
+  font-size: 17px;
+  display: inline-block;
+  box-shadow: 0 1px steelblue;
+  cursor: pointer;   margin-bottom: 5px;
+  transition-duration: 500ms;
+}
+.col1-row input#save:hover{
+  height: 42px;
+  box-shadow: 0 3px black ;
+  
+}
+/* Styling the Column-2 form section */
+.column-2{
+  padding-left: 3px;
+  border: none;
+  flex-direction: column;
+  margin: 5px;
+  flex: 1;
+  padding: 5px;
+  
+}
+
+.col2-row .projFiles{
+  margin-top: 10px;
+  padding-top: 0;
+  border: 1px solid gainsboro;
+  border-top: 0px
+}
+.col2-row p{
+  border: ;
+  height: 25px;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.col2-row .projFiles p:last-child{
+text-align: center;
+ font-weight: normal;
+
+}
+ .custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+  
+}
+.custom-file-input{
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 2px solid gainsboro;
+}
+.custom-file-input::before {
+  content: 'Select file';
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+/* Styling for viewProject.html */
+/* NB: MOST OF THE STYLES USED WERE INHERITED FROM THE EDITPROJECT.HTML CSS STYLING.
+I.E THE FLEX-CONTAINER AND COLUMN STYLES - .flex-container; .column-1; .col1-row; column-2; .col2-row; projFiles */
+.arr{
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  border-top: 0; border-bottom: 0;
+  padding: 0;
+  margin: 0;
+}
+.arr p:first-child{
+  background-color: gainsboro;
+}
+
+.arr p:nth-child(2){
+ border-bottom:1px solid gainsboro;
+}
+
+.arr p:nth-child(3){
+padding-bottom: 0;
+}
+.arr p:last-child{
+  background-color:gainsboro; font-weight: bold; color: blue;
+}
+
+
+/* Responsive Styling for our constant navbar*/
 @media (max-width:750px){
 #search_term{
   
