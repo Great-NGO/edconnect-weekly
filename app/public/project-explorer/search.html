@@ -2,101 +2,204 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Page</title>
 
-    <link rel="stylesheet" type="text/css" href="Css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html"><label>Project Explorer</label></a>
-        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
-        <button type="submit">Search</button>
-        <a href="search.html">Projects</a>
-        <a href="createProject.html" ">Submit</a>
-                            <a href="login.html">Login</a>
-        <a href="register.html">Sign Up</a>
-    
+    <!-- The Navbar -->
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
+            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="viewProject.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
-    <h2 class="Prof">Project Gallery</h2>
+    <!-- The Main body -->
 
-    <div class="search-nav">
 
-        <div class=searchItems><input type="text" id="S-input"
-                placeholder="Search project name, authors, abstract, tags"> </div>
-        <div class="searchItems"> <label for="searchBY">Search by </label> <select name="program">
 
-                <option>Name</option>
-                <option>Great Nwamadi</option>
+    <div class="container">
+        <p style="margin: 40px 0px 20px 0px; font-weight: bold; font-size: 30px">Project Gallery</p>
 
-            </select>
-        </div>
-        <div class="searchItems">
-            <input type="submit" name="Search" id="Search" value="Submit">
-        </div>
-    </div>
+        <div class="row" style="background-color: lightgray; padding: 10px 5px 10px 0px; margin: auto;"> 
 
-    <h2 class="Prof">All Results<span style="font-weight: normal; font-size: 17px; color: gray; margin-top: 5px;"> &nbsp;(4 results)</span></h2>
+            <div class="col">
 
-    <div class="Srch">
-        <div class="S-list">
+                <form class="form-inline" method="POST" action="" enctype="text/plain">
 
-            <ul>
-                <h3>Project 4</h3>
+                    <div class="form-group">
 
-                <li> Great-NGO, Okey N.</li> <br>
-                <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum qui laborum repellendus nihil
-                    corrupti, architecto repudiandae error nesciunt, recusandae aliquam excepturi consequuntur
-                    </li> <br>
-                <li class="tags"> #yaml, #cjs</li>
-            </ul>
-        </div>
-        <div class="S-list">
+                        <input class="form-control form-control-lg" name="searchTerm" size="45" type="text"
+                            placeholder="Search Project name, authors, abstract, tags">&nbsp;&nbsp;&nbsp;
 
-            <ul>
-                <h3>Project 3</h3>
-                <li> Henry James, Bola Ade</li> <br>
-                <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt soluta aut id earum suscipit
-                    nostrum repellendus beatae in non ratione illo velit nisi, molestias, amet itaque aspernatur eos
-                    </li> <br>
-                <li class="tags"> #css, #html</li>
-            </ul>
+                    </div>
+
+                    <div class="form-group">
+
+                        <button class="btn btn-lg" style="background-color: #a9a9a957" role="button">Search
+                            by</button>
+
+                        <select class="form-control form-control-lg" name="authorName">
+                            <option>Name</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        &nbsp;&nbsp;<button class="btn btn-primary btn-lg" type="submit">Submit</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
         </div>
 
-        <div class="S-list">
-            <ul>
-                <h3>Project 2</h3>
-                <li> Ade Ade, Tola Daniel</li> <br>
-                <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus iure totam architecto,
-                    aspernatur enim dolore sed minus, pariatur nostrum sit nobis in sapiente eos voluptas est
-                    </li> <br>
-                <li class="tags"> #ejs, #ci</li>
-            </ul>
-        </div>
-
-        <div class="S-list">
-
-            <ul>
-                <h3>Project 1</h3>
-                <li> Oakman, Brian James</li> <br>
-                <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure amet voluptates fugit laboriosam
-                    necessitatibus saepe nisi ex minus aut, et dicta est recusandae esse ducimus temporibus veniam
-                    </li> <br>
-                <li class="tags"> #javascript #mongodb</li>
-            </ul>
-        </div>
     </div>
 
 
 
-    <footer>
-        <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+    <div class="container">
+        <p style="margin: 40px 40px 0px 30px"><b>All Projects</b> <small class="text-muted">(4 results)</small></p>
+        
+        <div class="row" style="margin: 10px">
+
+            <div class="col-md-3 order-4">
+
+                <div class="card" style="padding: 20px">
+
+                    <div class="card-block">
+
+                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 1
+                        </h6>
+
+                        <small class="text-muted">James Li, Ade Brian</small>
+
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis repudiandae obcaecati
+                             tempora quasi ex incidunt sunt dignissimos minus.<br>
+
+                            <span style="color: dodgerblue">#javascript, #mongodb</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 order-3">
+
+                <div class="card" style="padding: 20px">
+
+                    <div class="card-block">
+
+                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 2
+                        </h6>
+
+                        <small class="text-muted">Fried Lim, Tola Daniel</small>
+
+                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vitae magni minima. 
+                            Quisquam, hic debitis? Voluptates, minima iure.<br>
+
+                            <span style="color: dodgerblue">#ejs, #ci</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 order-2">
+
+                <div class="card" style="padding: 20px">
+
+                    <div class="card-block">
+
+                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 3
+                        </h6>
+
+                        <small class="text-muted">Ben Rice, Ade Sola</small>
+
+                        <p class="card-text">Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster hipmunk prezi chartly bitly Zillow lala, sifteo.<br>
+
+                            <span style="color: dodgerblue">#css, #html</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3 order-1">
+
+                <div class="card" style="padding: 20px">
+
+                    <div class="card-block">
+
+                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 4
+                        </h6>
+
+                        <small class="text-muted">Henry James, Bola Ade</small>
+
+                        <p class="card-text">Swearem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque accumsan nisl, a mattis eros vestibulum
+                        et ligula porttitor.<br>
+
+                            <span style="color: dodgerblue">#yaml, #ejs</span></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="container">
+
+        <div class=""
+            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+            <p class="text-muted">
+                Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
+            </p>
+        </div>
     </footer>
-
 </body>
 
 </html>

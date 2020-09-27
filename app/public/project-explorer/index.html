@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
 
-        <link rel="stylesheet" type="text/css" href="Css/style.css">
-    </head>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
 
-    <body>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
 
-        <nav>
+<body>
+
+    <!--  <nav>
             <a href="index.html"><label>Project Explorer</label></a>
             <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
             <button type="submit">Search</button>
@@ -20,63 +21,188 @@
             <a href="register.html">Sign Up</a>
         
         </nav>
+ -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
+            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- The Body -->
+    <div class="container">
+
+        <div class="jumbotron" style="margin: 15px auto; max-width: px;">
+
+            <h2>Welcome to Project Explorer</h2>
+
+            <p class="lead">
+
+                Project Explorer is a repository for final year projects across all departments at your institution. You
+                can submit your project and search projects submitted by others to learn from.
+
+            </p>
+
+            <p>
+                <a class="btn btn-primary" href="register.html">Get Started</a>
+                <a class="btn btn-secondary" href="login.html">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+
 
         <div class="container">
-                <div class="jumbotron">
-                    <h1>Welcome to Project Explorer</h1>
-                    <p>Project Explorer is a repository for final year projects across all departments at your institution. You can upload
-                        and search projects and learn from others.</p>
-                
-                        
-                        <a href="#" class="button">Get Started</a>
-                        <a href=login.html class="button">Login</a>
-                            
-                        
+
+            <div class="row" style="margin: 20px px">
+
+                <div class="col-md-3 order-4">
+
+                    <div class="card" style="padding: 20px">
+
+                        <div class="card-block">
+
+                            <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">
+                                Project 1
+                            </h6>
+
+                            <small class="text-muted">James Li, Ade Brian</small>
+
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                                Assumenda debitis provident eos deleniti labore eius recusandae exercitationem <br>
+
+                                <span style="color: dodgerblue">#javascript, #mongodb</span></p>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
+                <div class="col-md-3 order-3">
+
+                    <div class="card" style="padding: 20px">
+
+                        <div class="card-block">
+
+                            <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">
+                                Project 2
+                            </h6>
+
+                            <small class="text-muted">Fried Lim, Tola Daniel</small>
+
+                            <p class="card-text">Baseball ipsum dolor sit amet swing line drive good eye play error. Left on base track baseball card
+                            foul line third baseman foul line.<br>
+
+                                <span style="color: dodgerblue">#ejs, #ci</span></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 order-2">
+
+                    <div class="card" style="padding: 20px">
+
+                        <div class="card-block">
+
+                            <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">
+                                Project 3
+                            </h6>
+
+                            <small class="text-muted">Ben Rice, Ade Sola</small>
+
+                            <p class="card-text">A survey on information transmission in Nigeria, its impact, the problems
+                                associated with it and possible solutions.<br> 
+
+                                <span style="color: dodgerblue">#css, #html</span></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 order-1">
+
+                    <div class="card" style="padding: 20px">
+
+                        <div class="card-block">
+
+                            <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">
+                                Project 4
+                            </h6>
+
+                            <small class="text-muted">Henry James, Bola Ade</small>
+
+                            <p class="card-text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Quos in iusto soluta natus earum nesciunt ad saepe impedit aliquam atque.<br>
+
+                                <span style="color: dodgerblue">#yaml, #ejs</span></p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <br> <h2 style="text-align:center; color: rgb(70, 99, 161);">Project List</h2>
+    </div>
 
-        <div class="projectList">
+    <footer class="container">
 
-        <div class="list">
-                <ul>
-                    <h3>Project 1</h3>
+        <div class="" style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
 
-                    <li> Name: Project 1</li>
-                    <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate vitae libero?</li>
-                    <li> Program: Computer Science</li>
-                    <li> Year: 2019</li>
-                </ul>
-        </div>
-        <div class="list">
-                <ul>
-                    <h3>Project 2</h3>
+            <p class="text-muted">
 
-                    <li> Name: Project 2</li>
-                    <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum aperiam eaque ullam adipisci cupiditate libero?</li>
-                    <li> Program: Public Health</li>
-                    <li> Year: 2015</li>
-                </ul>
-        </div>
-        <div class="list">
-            <ul>
-                <h3>Project 3</h3>
+                Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
 
-                <li> Name: Project 3</li>
-                <li> Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum expedita dignissimos, ipsum enetur, repudiandae quasi sint expedita libero?</li>
-                <li> Program: Mass Communication</li>
-                <li> Year: 2020</li>
-            </ul>
-         </div>
+            </p>
 
         </div>
 
-        <footer>
-            <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
-        </footer>
+    </footer>
 
-        
+    <!--  <footer>
+        <p>Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong> </p>
+    </footer> -->
 
-    </body>
+
+
+</body>
+
 </html>
+
