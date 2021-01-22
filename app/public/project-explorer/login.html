@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
+            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+    
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
+    
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
+    
+                <span id="username" style="display: none;"> </span>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
+                </li>
+    
+            </ul>
+        </div>
+    </nav>
+
+    <!--   The main Content -->
+    <main role="main">
+
+        <div class="container" style="max-width: 1000px; margin: 20px auto;">
+
+            <div class="row mt-3">
+
+                <div class="col-lg-12">
+                    <h1 id="loginh1">Login</h1>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col">
+
+                    <form method="post" action="" enctype="text/plain" id="loginForm">
+
+                        <fieldset class="form-group">
+                            <label>Email address</label>
+                            <input class="form-control" type="email" name="email" maxlength="50"
+                                placeholder="Enter email" id="fEmail">
+                        </fieldset>
+
+                        <fieldset class="form-group">
+                            <label>Password</label>
+                            <input class="form-control" type="password" name="password" placeholder="Password" id="fPsw">
+                        </fieldset>
+
+                        <button class="btn btn-primary" type="submit">Login</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="container">
+
+        <div class=""
+            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+
+            <p class="text-muted">
+
+                Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/app.js"> </script>
+</body>
+
+</html>

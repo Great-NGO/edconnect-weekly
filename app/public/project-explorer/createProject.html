@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <title>Create Project Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- The Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
+    
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
+            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+    
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
+    
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
+    
+                <span id="username" style="display: none;"> </span>
+    
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
+                </li>
+    
+            </ul>
+        </div>
+    </nav>
+    <!-- The main body -->
+    <div class="container" style>
+
+        <div class="row">
+
+            <div class="col">
+
+                <form method="POST" action="" enctype="text/plain" id="createProjectForm">
+
+                    <h3 style="margin-top: 20px " id="projH3">Submit Project</h3>
+
+                    <fieldset class="form-group">
+
+                        <label>Project Name</label>
+
+                        <input class="form-control" type="text" name="name" size="74" maxlength="50"
+                            placeholder="Enter project name" id="projName">
+
+                    </fieldset>
+
+                    <fieldset class="form-group">
+
+                        <label>Project Abstract</label>
+
+                        <textarea class="form-control" name="abstract" size="20" maxlength="200" rows="10"
+                            cols="56" id="projAbst"></textarea>
+
+                    </fieldset>
+
+                    <fieldset class="form-group">
+
+                        <label>Author(s)</label>
+
+                        <input class="form-control" type="text" name="authors" size="74" maxlength="50"
+                            placeholder="Enter author names (separated by comma)" id="pAuthors">
+
+                    </fieldset>
+
+                    <fieldset class="form-group">
+
+                        <label>Tag(s)</label>
+
+                        <input class="form-control" type="text" name="tags" size="74" maxlength="50"
+                            placeholder="Use # to tag project with different topics (e.g. #javascript #mongodb)" id="projTags">
+
+                    </fieldset>
+
+                    <button class="btn btn-primary" type="submit" name="submit">Continue</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="container">
+        <div class=""
+            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+
+            <p class="text-muted">
+                Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
+            </p>
+        </div>
+
+    </footer>
+    <script src="js/app.js"> </script>
+</body>
+
+</html>
