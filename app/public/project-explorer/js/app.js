@@ -367,7 +367,7 @@ if(path.includes("viewProject.html")) {
         let url_str = document.URL;     //the given url string. NB: document.URL property gives the current url of the browser window
         let url = new URL(url_str);     //create a new URL object from the url string 
         let search_params = url.searchParams;    //searchParams property is URLSearchParams object
-        let id = search_params.get('id');   //We get the vlaue of the id parameter and store it in a variable
+        const id = search_params.get('id');   //We get the value of the id parameter and store it in a variable
 
         fetch(`/api/projects/${id}`)
         .then((response) => {
@@ -381,8 +381,50 @@ if(path.includes("viewProject.html")) {
             console.log("The PROJECT name gotten from the Create Project page is: ", vPData.name);
 
             //Update Project name
-            let projName = document.getElementById("project_name");
-            console.log(projName);
+            let projName = document.getElementById("project_name");   console.log(projName);
+            projName.textContent = vPData.name;
+
+            //Update Project Authors
+            let projAuthors = document.getElementById("project_authors");
+    
+            // projAuthors.innerHTML = `
+            //     <p> ${vPData.authors.join('<br>')} </p>
+            // `;
+            console.log(vPData.authors);
+            for (let i = 0; i < vPData.authors.length; i++) {
+                projAuthors.innerHTML += "<p class='card-text' style='padding: 0px 5px'>" + ` ${vPData.authors[i]}` + "</p><hr>";
+                
+            }
+
+            //Update Project Abstract
+            let projAbst = document.getElementById("project_abstract");
+            console.log(projAbst)
+            
+            projAbst.innerHTML = `
+
+                <h3>Project Abstract</h3>
+                <hr style="margin:0px">
+                <p> ${vPData.abstract} </p>
+            `;
+
+            //Update Project Tags
+            let projTags = document.getElementById("project_tags");
+            projTags.innerHTML = `
+                <small style="color: dodgerblue; font-size: 15px;">${vPData.tags}</small>
+            `;
+            
+            //Update "Created By" 
+            fetch(`/api/users/${vPData.createdBy}`)
+                .then((response) => {
+                    console.log("Final response is: ", response);
+                    return response.json();
+                })
+                .then((data) => {
+                    let vPData = data;
+                    console.log("Final Data is: ", vPData);
+                    document.getElementById("project_author").textContent = `${vPData.firstname}` + " " + `${vPData.lastname}`;
+                    // console.log(data.name); 
+                })
 
         })
         .catch((err) => {
@@ -390,6 +432,10 @@ if(path.includes("viewProject.html")) {
             console.log("Error is : ", err)
         })
 
+      
+        // .catch((err) => {
+        //     console.log("You have an error: ", err) 
+        // })
     }
 }
 
