@@ -315,9 +315,9 @@ if (path.includes("index.html")) {
                     <div class="card" style="padding: 20px">
                         <div class="card-block">
                             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
-                            <small class="text-muted"> ${projectname.authors.join(",")} </small>
+                            <small class="text-muted"> ${projectname.authors.join(',')} </small>
                             <p class="card-text"> ${projectname.abstract} </p>
-                            <p style="color: dodgerblue"> ${projectname.tags.join("#")} </p>
+                            <p style="color: dodgerblue"> ${projectname.tags.join('#')} </p>
                         </div>
                     </div>
                     `  ;
@@ -410,7 +410,7 @@ if(path.includes("viewProject.html")) {
             //Update Project Tags
             let projTags = document.getElementById("project_tags");
             projTags.innerHTML = `
-                <small style="color: dodgerblue; font-size: 15px;">${vPData.tags}</small>
+                <small style="color: dodgerblue; font-size: 15px;">${vPData.tags.join('#')}</small>
             `;
             
             //Update "Created By" 
