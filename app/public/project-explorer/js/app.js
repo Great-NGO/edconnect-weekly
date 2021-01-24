@@ -299,7 +299,8 @@ if (path.includes("index.html")) {
                 let pData = data;
                 console.log(pData);
 
-                let fourProjects = pData.slice(0, 4);
+                let fourProjects = pData.slice(-4); //get the last 4 elements in the array
+                fourProjects.className = "showcase";
 
                 fourProjects.forEach((projectname) => {
                     var showcase = document.querySelector(".showcase");
@@ -310,9 +311,10 @@ if (path.includes("index.html")) {
                    //METHOD 1 - CREATING A GENERAL DIV, SETTING THE INNERHTML TO DISPLAY THE PROJECT AND ALL ITS PROPERTIES AND ADDING A CLICK EVENT LISTENER WHICH REDIRECTS TO VIEWPROJECT WITH A QUERY STRING? OF THE ID OF THE ACTUAL PROJECT
                    
                     const cardDiv = document.createElement('div');
-                    cardDiv.className = "col-md-3";
+                    cardDiv.className = "col-md-3 showcase";
                     cardDiv.innerHTML = `
-                    <div class="card" style="padding: 20px">
+                    
+                    <div class = 'card' style="padding:20px"> 
                         <div class="card-block">
                             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
                             <small class="text-muted"> ${projectname.authors.join(',')} </small>
@@ -326,7 +328,8 @@ if (path.includes("index.html")) {
                     //When a project name is clicked, redirect to the View Project Page and replace the project id with the actual project id
                     cardDiv.addEventListener('click', function () {
                         window.location.href = `viewProject.html?id=${projectname.id}`;
-                    }) // return cardDiv; 
+                    }) 
+                     return cardDiv; 
                     
 
                     // //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
@@ -383,9 +386,7 @@ if(path.includes("viewProject.html")) {
             //Update Project name
             let projName = document.getElementById("project_name");   
             console.log(projName);
-            projName.innerHTML = `<p>
-             ${vPData.name} 
-             </p>`;
+            projName.innerText = `${vPData.name}`;
             projName.setAttribute('style', 'margin: 40px 0 20px 20px; font-size: 30px; font-weight:bold;')
             
             //Update Project Authors
@@ -437,9 +438,7 @@ if(path.includes("viewProject.html")) {
         })
 
       
-        // .catch((err) => {
-        //     console.log("You have an error: ", err) 
-        // })
+    
     }
 }
 
