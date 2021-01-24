@@ -381,9 +381,13 @@ if(path.includes("viewProject.html")) {
             console.log("The PROJECT name gotten from the Create Project page is: ", vPData.name);
 
             //Update Project name
-            let projName = document.getElementById("project_name");   console.log(projName);
-            projName.textContent = vPData.name;
-
+            let projName = document.getElementById("project_name");   
+            console.log(projName);
+            projName.innerHTML = `<p>
+             ${vPData.name} 
+             </p>`;
+            projName.setAttribute('style', 'margin: 40px 0 20px 20px; font-size: 30px; font-weight:bold;')
+            
             //Update Project Authors
             let projAuthors = document.getElementById("project_authors");
     
