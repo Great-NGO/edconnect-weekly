@@ -220,74 +220,180 @@ function loginFormSubmit(event) {
 }
 
 //STEP 7 - IMPLEMENT CREATE PROJECT & STEP 8 - RESTRICT PROJECT SUBMISSION TO LOGGED-IN USERS
-window.addEventListener('load', function (evt) {
-evt.preventDefault();
-    if (!(`${ getCookie(`uid`)}`)) {
-        window.location.href.replace("login.html");
+const path = window.location.href;
+if (path.includes("createProject.html")) {
+    //Checking to see that the Path is on createProject.html
+
+    if (!getCookie(`uid`)) {
+        //If the User is not logged in i.e The Uid cookie doesn't exist then redirect to login.html
+        window.location.replace("login.html");
     }
- 
-})
+    else if (getCookie(`uid`)) {
+        // If the User is logged in i.e The Cookie exists, perform the post request, save the users project and redirect to index.html. if the users data is wrong, display the errors
+        let createProjectForm = document.getElementById("createProjectForm");
 
-var createProjectForm = document.getElementById("createProjectForm");
+        if (createProjectForm) {
+            createProjectForm.addEventListener('submit', createProjectFormSubmit)
+        }
 
-if (createProjectForm) {
-    createProjectForm.addEventListener('submit', createProjectFormSubmit)
+        function createProjectFormSubmit(evt) {
+            evt.preventDefault();
+            const createProjectFormData = {
+
+                "name": document.getElementById("projName").value,
+                "abstract": document.getElementById("projAbst").value,
+                "authors": document.getElementById("pAuthors").value.split(','), // to split the array elements by a comma ','
+                "tags": document.getElementById("projTags").value.split('#') //to split the array elements by a hashtag '#'
+            }
+            console.log(createProjectFormData);
+
+            fetch('/api/projects', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(createProjectFormData)
+            })
+                .then((response) => {
+                    console.log(response);
+                    return response.json();
+                })
+                .then((data) => {
+                    if (data.status === "ok") {
+                        console.log("Project Creation Success: ", data)
+                        window.location.replace("index.html");
+                    }
+                    else if (data.status !== "ok") {
+
+                        let projErrMsg = data.errors;
+                        let projErrDiv = document.createElement("div");
+
+                        projErrDiv.className = "alert alert-danger";
+                        projErrDiv.innerHTML = projErrMsg.join("<br>");
+                        let projH3 = document.querySelector("#projH3");
+                        projH3.insertAdjacentElement("afterend", projErrDiv);
+
+                    }
+                })
+                .catch((err) => {
+                    console.log("Error generated");
+                    console.log("Error is: ", err)
+                })
+        }
+
+    }
+
 }
 
+//STEP 9 - Update the project list on the Home Page
+if (path.includes("index.html")) {
+    if (getCookie(`uid`)) {
 
-function createProjectFormSubmit(evt) {
-    evt.preventDefault();
-    const createProjectFormData = {
+        fetch('/api/projects')
+            .then((response) => {
+                console.log(response);
+                return response.json();
+            })
+            .then((data) => {
 
-        "name": document.getElementById("projName").value,
-        "abstract": document.getElementById("projAbst").value,
-        "authors": document.getElementById("pAuthors").value.split(','), // to split the array elements by a comma ','
-        "tags": document.getElementById("projTags").value.split('#') //to split the array elements by a hashtag '#'
+                let pData = data;
+                console.log(pData);
+
+                let fourProjects = pData.slice(0, 4);
+
+                fourProjects.forEach((projectname) => {
+                    var showcase = document.querySelector(".showcase");
+
+                    console.log(projectname);
+                    console.log("PROJECT NAME: ", projectname.name, "PROJECT ID:", projectname.id);
+
+                   //METHOD 1 - CREATING A GENERAL DIV, SETTING THE INNERHTML TO DISPLAY THE PROJECT AND ALL ITS PROPERTIES AND ADDING A CLICK EVENT LISTENER WHICH REDIRECTS TO VIEWPROJECT WITH A QUERY STRING? OF THE ID OF THE ACTUAL PROJECT
+                   
+                    const cardDiv = document.createElement('div');
+                    cardDiv.className = "col-md-3";
+                    cardDiv.innerHTML = `
+                    <div class="card" style="padding: 20px">
+                        <div class="card-block">
+                            <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
+                            <small class="text-muted"> ${projectname.authors.join(",")} </small>
+                            <p class="card-text"> ${projectname.abstract} </p>
+                            <p style="color: dodgerblue"> ${projectname.tags.join("#")} </p>
+                        </div>
+                    </div>
+                    `  ;
+                    showcase.appendChild(cardDiv);
+
+                    //When a project name is clicked, redirect to the View Project Page and replace the project id with the actual project id
+                    cardDiv.addEventListener('click', function () {
+                        window.location.href = `viewProject.html?id=${projectname.id}`;
+                    }) // return cardDiv; 
+                    
+
+                    // //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
+                    // const ancDiv = document.createElement('div');
+                    // ancDiv.className = "col-md-3";
+                    // const anc = document.createElement('a');
+                    // anc.href = `viewProject.html?id=${projectname.id}`; //Setting the href attribute to link to the ViewProject page and replace the project id with the actual project id
+                    
+                    // // anc.textContent = `${projectname.name}`;
+                    // anc.innerHTML = `
+                    //     <div class="card" style="padding: 20px">
+                    //     <div class="card-block">
+                    //         <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
+                    //         <small class="text-muted"> ${projectname.authors.join(",")} </small>
+                    //         <p class="card-text"> ${projectname.abstract} </p>
+                    //         <p style="color: dodgerblue"> ${projectname.tags.join("#")} </p>
+                    //     </div>
+                    // </div>
+                    // `;
+                    // anc.setAttribute('style', 'text-decoration:none; color:black'); // To prevent the page from showing its default line or color
+                    // console.log(anc);
+                    // ancDiv.appendChild(anc);
+                    // showcase.appendChild(ancDiv);
+
+
+                })
+            })
+            .catch((err) => {
+                console.log("SOMETHING IS WRONG :( ");
+                console.log(err);
+            })
     }
+}
 
-    console.log(createProjectFormData);
+//STEP 10 - UPDATE VIEWPROJECT PAGE
+if(path.includes("viewProject.html")) {
+    if(getCookie(`uid`)) {
+        let url_str = document.URL;     //the given url string. NB: document.URL property gives the current url of the browser window
+        let url = new URL(url_str);     //create a new URL object from the url string 
+        let search_params = url.searchParams;    //searchParams property is URLSearchParams object
+        let id = search_params.get('id');   //We get the vlaue of the id parameter and store it in a variable
 
-    fetch('/api/projects', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(createProjectFormData)
-    })
+        fetch(`/api/projects/${id}`)
         .then((response) => {
             console.log(response);
             return response.json();
         })
         .then((data) => {
-            if (data.status === "ok") {
-                console.log("Project Creation Success: ", data)
-                // document.cookie = `uid = ${data.data.id}; path=/;max-age=60*60*24*30;`;
+            let vPData = data;
+            console.log(vPData);
+            console.log("The PROJECT ID gotten from the Create Project page is: ", vPData.id);
+            console.log("The PROJECT name gotten from the Create Project page is: ", vPData.name);
 
-                window.location.replace("index.html");
-            }
-            else if (data.status !== "ok") {
+            //Update Project name
+            let projName = document.getElementById("project_name");
+            console.log(projName);
 
-                let projErrMsg = data.errors;
-                let projErrDiv = document.createElement("div");
-
-                // projErrDiv.classList.add("alert alert-danger");
-                projErrDiv.className = "alert alert-danger";
-                projErrDiv.innerHTML = projErrMsg.join("<br>");
-                let projH3 = document.querySelector("#projH3");
-                projH3.insertAdjacentElement("afterend", projErrDiv);
-
-            }
         })
         .catch((err) => {
-            console.log("Error generated");
-            console.log("Error is: ", err)
+            console.log("Final Lap")
+            console.log("Error is : ", err)
         })
+
+    }
 }
 
 
-// window.onload = function(){
-
-// }
 
 
 
@@ -309,14 +415,7 @@ function createProjectFormSubmit(evt) {
 
 
 
-
-
-
-
-
-
-
-
+// window.location.href = `${window.location.origin}/project-explorer/viewProject.html?id=${projectname.id}`;
 
 /* ALTERNATIVE METHOD FOR IMPLEMENTING SIGNUP (STEP4)
 async function postFormDataAsJson({ url, formData }) {

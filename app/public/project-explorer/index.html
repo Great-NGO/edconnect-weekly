@@ -4,8 +4,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <title>Home Page</title>
-
+    
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 </head>
 
@@ -22,15 +24,15 @@
         
         </nav>
  -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary" id="mainNavbar">
         <a href="index.html" class="navbar-brand">Project Explorer</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navHeaderCollapse"
+            aria-controls="#navHeaderCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="#responsive-nav">
+        <div class="collapse navbar-collapse" id="#navLinks">
             <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
                 <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
@@ -53,8 +55,8 @@
                     <a class="nav-link" href="login.html" title="Login Page">Login</a>
                 </li>
 
-                <span id="username" style="display: none;">  </span>
-               
+                <span id="username" style="display: none;"> </span>
+
                 <li class="nav-item">
                     <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
                 </li>
@@ -89,9 +91,9 @@
 
     <div class="container">
 
-        <div class="row" style="margin: 20px px">
+        <div class="row showcase" style="margin: 20px px">
 
-            <div class="col-md-3 order-4">
+            <!-- <div class="col-md-3 order-4">
 
                 <div class="card" style="padding: 20px">
 
@@ -124,7 +126,7 @@
                         <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">
                             Project 2
                         </h6>
-
+                        
                         <small class="text-muted">Fried Lim, Tola Daniel</small>
 
                         <p class="card-text">Baseball ipsum dolor sit amet swing line drive good eye play error. Left on
@@ -188,9 +190,9 @@
 
             </div>
 
-        </div>
+        </div> -->
 
-    </div>
+        </div>
 
     </div>
 
@@ -211,6 +213,11 @@
 
 
     <script src="js/app.js"> </script>
+
+    <!-- Optional Bootstrap Javascript -->
+   
+
+    
 </body>
 
 </html>
