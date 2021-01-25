@@ -299,8 +299,8 @@ if (path.includes("index.html")) {
             let pData = data;
             console.log(pData);
 
-            let fourProjects = pData.slice(-4); //get the last/recent 4 elements in the array
-          //  let fourProjects = pData.slice(0, 4); //get the first 4 elements in the array
+            // let fourProjects = pData.slice(-4); //get the last/recent 4 elements in the array NB: DOESN'T WORK WITH THE CYPRESS SERVER EDCONNECT USES TO TEST ITS CODE
+           let fourProjects = pData.slice(0, 4); //get the first 4 elements in the array
 
             fourProjects.forEach((projectname) => {
                 const showcase = document.querySelector(".showcase");
