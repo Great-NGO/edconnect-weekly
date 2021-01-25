@@ -287,7 +287,7 @@ if (path.includes("createProject.html")) {
 
 //STEP 9 - Update the project list on the Home Page
 if (path.includes("index.html")) {
-    if (getCookie(`uid`)) {
+   
 
         fetch('/api/projects')
             .then((response) => {
@@ -303,7 +303,7 @@ if (path.includes("index.html")) {
                 let fourProjects = pData.slice(0,4); //get the first 4 elements in the array
             
                 fourProjects.forEach((projectname) => {
-                    const showcase = document.querySelector("#showcase");
+                    const showcase = document.querySelector(".showcase");
 
                     console.log(projectname);
                     console.log("PROJECT NAME: ", projectname.name, "PROJECT ID:", projectname.id);
@@ -361,7 +361,7 @@ if (path.includes("index.html")) {
                 console.log("SOMETHING IS WRONG :( ");
                 console.log(err);
             })
-    }
+    
 }
 
 //STEP 10 - UPDATE VIEWPROJECT PAGE
