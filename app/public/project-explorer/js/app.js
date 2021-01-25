@@ -76,7 +76,7 @@ function handleFormSubmit(event) {
             console.log("The data is:", data)
             if (data.status === "ok") {
                 console.log("Success:", data);
-                document.cookie = `uid = ${data.data.id};path=/;max-age=60*60*24*30;`;
+                document.cookie = `uid = ${data.data.id};path=/;`;
                 window.location.replace("index.html");
                 // console.log("HURRAY IT's WORKING");
             }
@@ -201,7 +201,7 @@ function loginFormSubmit(event) {
             console.log("The Data is: ", data)
             if (data.status === "ok") {
                 console.log("Login Success: ", data)
-                document.cookie = `uid = ${data.data.id}; path=/;max-age=60*60*24*30;`;
+                document.cookie = `uid = ${data.data.id}; path=/`;
                 window.location.replace("index.html");
             }
             else if (data.status !== "ok") {
@@ -299,60 +299,60 @@ if (path.includes("index.html")) {
                 let pData = data;
                 console.log(pData);
 
-                let fourProjects = pData.slice(-4); //get the last 4 elements in the array
-                fourProjects.className = "showcase";
-
+               // let fourProjects = pData.slice(-4); //get the last/recent 4 elements in the array
+                let fourProjects = pData.slice(0,4); //get the first 4 elements in the array
+            
                 fourProjects.forEach((projectname) => {
-                    var showcase = document.querySelector(".showcase");
+                    const showcase = document.querySelector("#showcase");
 
                     console.log(projectname);
                     console.log("PROJECT NAME: ", projectname.name, "PROJECT ID:", projectname.id);
 
-                   //METHOD 1 - CREATING A GENERAL DIV, SETTING THE INNERHTML TO DISPLAY THE PROJECT AND ALL ITS PROPERTIES AND ADDING A CLICK EVENT LISTENER WHICH REDIRECTS TO VIEWPROJECT WITH A QUERY STRING? OF THE ID OF THE ACTUAL PROJECT
+                //    //METHOD 1 - CREATING A GENERAL DIV, SETTING THE INNERHTML TO DISPLAY THE PROJECT AND ALL ITS PROPERTIES AND ADDING A CLICK EVENT LISTENER WHICH REDIRECTS TO VIEWPROJECT WITH A QUERY STRING? OF THE ID OF THE ACTUAL PROJECT
                    
-                    const cardDiv = document.createElement('div');
-                    cardDiv.className = "col-md-3 showcase";
-                    cardDiv.innerHTML = `
+                //     const cardDiv = document.createElement('div');
+                //     cardDiv.className = "col-md-3";
+                //     cardDiv.innerHTML = `
                     
-                    <div class = 'card' style="padding:20px"> 
+                //     <div class = 'card' style="padding:20px"> 
+                //         <div class="card-block">
+                //             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
+                //             <small class="text-muted"> ${projectname.authors.join(',')} </small>
+                //             <p class="card-text"> ${projectname.abstract} </p>
+                //             <p style="color: dodgerblue"> ${projectname.tags.join('#')} </p>
+                //         </div>
+                //     </div>
+                //     `  ;
+                //     showcase.appendChild(cardDiv);
+
+                //     //When a project name is clicked, redirect to the View Project Page and replace the project id with the actual project id
+                //     cardDiv.addEventListener('click', function () {
+                //         window.location.href = `viewProject.html?id=${projectname.id}`;
+                //     }) 
+                //     //  return cardDiv; 
+                    
+
+                    //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
+                    const ancDiv = document.createElement('div');
+                    ancDiv.className = "col-md-3";
+                    const anc = document.createElement('a');
+                    anc.href = `viewProject.html?id=${projectname.id}`; //Setting the href attribute to link to the ViewProject page and replace the project id with the actual project id
+                    
+                    // anc.textContent = `${projectname.name}`;
+                    anc.innerHTML = `
+                        <div class="card" style="padding: 20px">
                         <div class="card-block">
                             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
-                            <small class="text-muted"> ${projectname.authors.join(',')} </small>
+                            <small class="text-muted"> ${projectname.authors.join(",")} </small>
                             <p class="card-text"> ${projectname.abstract} </p>
-                            <p style="color: dodgerblue"> ${projectname.tags.join('#')} </p>
+                            <p style="color: dodgerblue"> ${projectname.tags.join("#")} </p>
                         </div>
                     </div>
-                    `  ;
-                    showcase.appendChild(cardDiv);
-
-                    //When a project name is clicked, redirect to the View Project Page and replace the project id with the actual project id
-                    cardDiv.addEventListener('click', function () {
-                        window.location.href = `viewProject.html?id=${projectname.id}`;
-                    }) 
-                     return cardDiv; 
-                    
-
-                    // //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
-                    // const ancDiv = document.createElement('div');
-                    // ancDiv.className = "col-md-3";
-                    // const anc = document.createElement('a');
-                    // anc.href = `viewProject.html?id=${projectname.id}`; //Setting the href attribute to link to the ViewProject page and replace the project id with the actual project id
-                    
-                    // // anc.textContent = `${projectname.name}`;
-                    // anc.innerHTML = `
-                    //     <div class="card" style="padding: 20px">
-                    //     <div class="card-block">
-                    //         <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
-                    //         <small class="text-muted"> ${projectname.authors.join(",")} </small>
-                    //         <p class="card-text"> ${projectname.abstract} </p>
-                    //         <p style="color: dodgerblue"> ${projectname.tags.join("#")} </p>
-                    //     </div>
-                    // </div>
-                    // `;
-                    // anc.setAttribute('style', 'text-decoration:none; color:black'); // To prevent the page from showing its default line or color
-                    // console.log(anc);
-                    // ancDiv.appendChild(anc);
-                    // showcase.appendChild(ancDiv);
+                    `;
+                    anc.setAttribute('style', 'text-decoration:none; color:black'); // To prevent the page from showing its default line or color
+                    console.log(anc);
+                    ancDiv.appendChild(anc);
+                    showcase.appendChild(ancDiv);
 
 
                 })
