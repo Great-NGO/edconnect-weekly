@@ -287,33 +287,33 @@ if (path.includes("createProject.html")) {
 
 //STEP 9 - Update the project list on the Home Page
 if (path.includes("index.html")) {
-   
 
-        fetch('/api/projects')
-            .then((response) => {
-                console.log(response);
-                return response.json();
-            })
-            .then((data) => {
 
-                let pData = data;
-                console.log(pData);
+    fetch('/api/projects')
+        .then((response) => {
+            console.log(response);
+            return response.json();
+        })
+        .then((data) => {
 
-               // let fourProjects = pData.slice(-4); //get the last/recent 4 elements in the array
-                let fourProjects = pData.slice(0,4); //get the first 4 elements in the array
-            
-                fourProjects.forEach((projectname) => {
-                    const showcase = document.querySelector(".showcase");
+            let pData = data;
+            console.log(pData);
 
-                    console.log(projectname);
-                    console.log("PROJECT NAME: ", projectname.name, "PROJECT ID:", projectname.id);
+            // let fourProjects = pData.slice(-4); //get the last/recent 4 elements in the array
+            let fourProjects = pData.slice(0, 4); //get the first 4 elements in the array
+
+            fourProjects.forEach((projectname) => {
+                const showcase = document.querySelector(".showcase");
+
+                console.log(projectname);
+                console.log("PROJECT NAME: ", projectname.name, "PROJECT ID:", projectname.id);
 
                 //    //METHOD 1 - CREATING A GENERAL DIV, SETTING THE INNERHTML TO DISPLAY THE PROJECT AND ALL ITS PROPERTIES AND ADDING A CLICK EVENT LISTENER WHICH REDIRECTS TO VIEWPROJECT WITH A QUERY STRING? OF THE ID OF THE ACTUAL PROJECT
-                   
+
                 //     const cardDiv = document.createElement('div');
                 //     cardDiv.className = "col-md-3";
                 //     cardDiv.innerHTML = `
-                    
+
                 //     <div class = 'card' style="padding:20px"> 
                 //         <div class="card-block">
                 //             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
@@ -330,16 +330,16 @@ if (path.includes("index.html")) {
                 //         window.location.href = `viewProject.html?id=${projectname.id}`;
                 //     }) 
                 //     //  return cardDiv; 
-                    
 
-                    //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
-                    const ancDiv = document.createElement('div');
-                    ancDiv.className = "col-md-3";
-                    const anc = document.createElement('a');
-                    anc.href = `viewProject.html?id=${projectname.id}`; //Setting the href attribute to link to the ViewProject page and replace the project id with the actual project id
-                    
-                    // anc.textContent = `${projectname.name}`;
-                    anc.innerHTML = `
+
+                //METHOD 2 - CREATING AN ANCHOR TAG, SETTING ITS LINK(HREF) TO BE THAT OF THE VIEWPROJECT PAGE WITH THE QUERY STRING? OF THE ACTUAL PROJECET ID
+                const ancDiv = document.createElement('div');
+                ancDiv.className = "col-md-3";
+                const anc = document.createElement('a');
+                anc.href = `viewProject.html?id=${projectname.id}`; //Setting the href attribute to link to the ViewProject page and replace the project id with the actual project id
+
+                // anc.textContent = `${projectname.name}`;
+                anc.innerHTML = `
                         <div class="card" style="padding: 20px">
                         <div class="card-block">
                             <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue"> ${projectname.name} </h6>
@@ -349,97 +349,94 @@ if (path.includes("index.html")) {
                         </div>
                     </div>
                     `;
-                    anc.setAttribute('style', 'text-decoration:none; color:black'); // To prevent the page from showing its default line or color
-                    console.log(anc);
-                    ancDiv.appendChild(anc);
-                    showcase.appendChild(ancDiv);
+                anc.setAttribute('style', 'text-decoration:none; color:black'); // To prevent the page from showing its default line or color
+                console.log(anc);
+                ancDiv.appendChild(anc);
+                showcase.appendChild(ancDiv);
 
 
-                })
             })
-            .catch((err) => {
-                console.log("SOMETHING IS WRONG :( ");
-                console.log(err);
-            })
-    
+        })
+        .catch((err) => {
+            console.log("SOMETHING IS WRONG :( ");
+            console.log(err);
+        })
+
 }
 
 //STEP 10 - UPDATE VIEWPROJECT PAGE
-if(path.includes("viewProject.html")) {
-    if(getCookie(`uid`)) {
+if (path.includes("viewProject.html")) {
+  
         let url_str = document.URL;     //the given url string. NB: document.URL property gives the current url of the browser window
         let url = new URL(url_str);     //create a new URL object from the url string 
         let search_params = url.searchParams;    //searchParams property is URLSearchParams object
         const id = search_params.get('id');   //We get the value of the id parameter and store it in a variable
 
         fetch(`/api/projects/${id}`)
-        .then((response) => {
-            console.log(response);
-            return response.json();
-        })
-        .then((data) => {
-            let vPData = data;
-            console.log(vPData);
-            console.log("The PROJECT ID gotten from the Create Project page is: ", vPData.id);
-            console.log("The PROJECT name gotten from the Create Project page is: ", vPData.name);
+            .then((response) => {
+                console.log(response);
+                return response.json();
+            })
+            .then((data) => {
+                let vPData = data;
+                console.log(vPData);
+                console.log("The PROJECT ID gotten from the Create Project page is: ", vPData.id);
+                console.log("The PROJECT name gotten from the Create Project page is: ", vPData.name);
 
-            //Update Project name
-            let projName = document.getElementById("project_name");   
-            console.log(projName);
-            projName.innerText = `${vPData.name}`;
-            projName.setAttribute('style', 'margin: 40px 0 20px 20px; font-size: 30px; font-weight:bold;')
-            
-            //Update Project Authors
-            let projAuthors = document.getElementById("project_authors");
-    
-            // projAuthors.innerHTML = `
-            //     <p> ${vPData.authors.join('<br>')} </p>
-            // `;
-            console.log(vPData.authors);
-            for (let i = 0; i < vPData.authors.length; i++) {
-                projAuthors.innerHTML += "<p class='card-text' style='padding: 0px 5px'>" + ` ${vPData.authors[i]}` + "</p><hr>";
-                
-            }
+                //Update Project name
+                let projName = document.getElementById("project_name");
+                console.log(projName);
+                projName.innerText = `${vPData.name}`;
+                projName.setAttribute('style', 'margin: 40px 0 20px 20px; font-size: 30px; font-weight:bold;')
 
-            //Update Project Abstract
-            let projAbst = document.getElementById("project_abstract");
-            console.log(projAbst)
-            
-            projAbst.innerHTML = `
+                //Update Project Authors
+                let projAuthors = document.getElementById("project_authors");
+
+                // projAuthors.innerHTML = `
+                //     <p> ${vPData.authors.join('<br>')} </p>
+                // `;
+                console.log(vPData.authors);
+                for (let i = 0; i < vPData.authors.length; i++) {
+                    projAuthors.innerHTML += "<p class='card-text' style='padding: 0px 5px'>" + ` ${vPData.authors[i]}` + "</p><hr>";
+
+                }
+
+                //Update Project Abstract
+                let projAbst = document.getElementById("project_abstract");
+                console.log(projAbst)
+
+                projAbst.innerHTML = `
 
                 <h3>Project Abstract</h3>
                 <hr style="margin:0px">
                 <p> ${vPData.abstract} </p>
             `;
 
-            //Update Project Tags
-            let projTags = document.getElementById("project_tags");
-            projTags.innerHTML = `
+                //Update Project Tags
+                let projTags = document.getElementById("project_tags");
+                projTags.innerHTML = `
                 <small style="color: dodgerblue; font-size: 15px;">${vPData.tags.join('#')}</small>
             `;
-            
-            //Update "Created By" 
-            fetch(`/api/users/${vPData.createdBy}`)
-                .then((response) => {
-                    console.log("Final response is: ", response);
-                    return response.json();
-                })
-                .then((data) => {
-                    let vPData = data;
-                    console.log("Final Data is: ", vPData);
-                    document.getElementById("project_author").textContent = `${vPData.firstname}` + " " + `${vPData.lastname}`;
-                    // console.log(data.name); 
-                })
 
-        })
-        .catch((err) => {
-            console.log("Final Lap")
-            console.log("Error is : ", err)
-        })
+                //Update "Created By" 
+                fetch(`/api/users/${vPData.createdBy}`)
+                    .then((response) => {
+                        console.log("Final response is: ", response);
+                        return response.json();
+                    })
+                    .then((data) => {
+                        let vPData = data;
+                        console.log("Final Data is: ", vPData);
+                        document.getElementById("project_author").textContent = `${vPData.firstname}` + " " + `${vPData.lastname}`;
+                        // console.log(data.name); 
+                    })
 
-      
-    
-    }
+            })
+            .catch((err) => {
+                console.log("Final Lap")
+                console.log("Error is : ", err)
+            })
+
 }
 
 
