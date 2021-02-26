@@ -7,52 +7,51 @@
     <title>SignUp Page</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- The Default Navbar styling -->
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-    <a href="index.html" class="navbar-brand">Project Explorer</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-        aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav" aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="#responsive-nav">
-        <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
-            <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="search.html" title="Projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
 
-        <ul class="navbar-nav mr-sm-2">
-            <li class="nav-item">
-                <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html" title="Login Page">Login</a>
-            </li>
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
 
-            <span id="username" style="display: none;"> </span>
+                <span id="username" style="display: none;"> </span>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
+                </li>
 
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
 
     <!-- The Body -->
 
@@ -60,8 +59,8 @@
 
         <div class="container">
 
-            <form method="POST" action="" enctype="text/plain" id="signupForm" >
-                <h2 style=" padding-top: 20px;">Sign up</h2> 
+            <form method="POST" action="" enctype="text/plain" id="signupForm">
+                <h2>Sign up</h2>
 
                 <div class="row" style>
 
@@ -70,8 +69,7 @@
 
                             <label>First name</label>
 
-                            <input class="form-control" type="text" name="firstName" size="74" maxlength="30"
-                                placeholder="First name" id="fn">
+                            <input class="form-control" type="text" name="firstName" size="74" maxlength="30" placeholder="First name" id="fn">
 
                         </fieldset>
 
@@ -79,8 +77,7 @@
 
                             <label>Email Address</label>
 
-                            <input class="form-control" type="email" name="email" size="74" maxlength="50"
-                                placeholder="Your Email address" id="email">
+                            <input class="form-control" type="email" name="email" size="74" maxlength="50" placeholder="Your Email address" id="email">
 
                         </fieldset>
 
@@ -107,8 +104,7 @@
 
                             <label>Last name</label>
 
-                            <input class="form-control" type="text" name="lastName" size="74" maxlength="30"
-                                placeholder="Last name" id="ln">
+                            <input class="form-control" type="text" name="lastName" size="74" maxlength="30" placeholder="Last name" id="ln">
 
                         </fieldset>
 
@@ -116,8 +112,7 @@
 
                             <label>Password</label>
 
-                            <input class="form-control" type="password" name="password" size="74" maxlength="30"
-                                placeholder="Your Password" id="psw">
+                            <input class="form-control" type="password" name="password" size="74" maxlength="30" placeholder="Your Password" id="psw">
 
                             <div class="row mt-3">
 
@@ -127,8 +122,7 @@
 
                                         <label>Matriculation Number</label>
 
-                                        <input class="form-control" type="text" name="matricNumber" size="34px"
-                                            maxlength="8" placeholder="e.g. 16/2020" id="matNo">
+                                        <input class="form-control" type="text" name="matricNumber" size="34px" maxlength="8" placeholder="e.g. 16/2020" id="matNo">
 
                                     </fieldset>
 
@@ -156,7 +150,7 @@
                     </div>
 
                 </div>
-                <button class="btn btn-primary" id="rBtn1" type="submit" style="margin-top: -10px;">Sign Up</button>
+                <button class="btn btn-primary" id="rBtn1" type="submit">Sign Up</button>
             </form>
 
         </div>
@@ -165,8 +159,7 @@
 
     <!-- The Footer -->
     <footer class="container">
-        <div class=""
-            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+        <div class="footerDiv">
 
             <p class="text-muted">
                 Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>

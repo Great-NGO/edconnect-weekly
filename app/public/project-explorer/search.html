@@ -7,61 +7,61 @@
     <title>Search Page</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- The Navbar -->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-    <a href="index.html" class="navbar-brand">Project Explorer</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-        aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav" aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="#responsive-nav">
-        <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
-            <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="search.html" title="Projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
 
-        <ul class="navbar-nav mr-sm-2">
-            <li class="nav-item">
-                <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html" title="Login Page">Login</a>
-            </li>
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
 
-            <span id="username" style="display: none;"> </span>
+                <span id="username" style="display: none;"> </span>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
+                </li>
 
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
 
     <!-- The Main body -->
 
 
 
     <div class="container">
-        <p style="margin: 40px 0px 20px 0px; font-weight: bold; font-size: 30px">Project Gallery</p>
+        <p id="searchP1">Project Gallery</p>
 
-        <div class="row" style="background-color: lightgray; padding: 10px 5px 10px 0px; margin: auto;">
+        <div class="row" id="searchRow1">
 
             <div class="col">
 
@@ -69,14 +69,13 @@
 
                     <div class="form-group">
 
-                        <input class="form-control form-control-lg" name="searchTerm" size="45" type="text"
-                            placeholder="Search Project name, authors, abstract, tags">&nbsp;&nbsp;&nbsp;
+                        <input class="form-control form-control-lg" name="searchTerm" size="45" type="text" placeholder="Search Project name, authors, abstract, tags">&nbsp;&nbsp;&nbsp;
 
                     </div>
 
                     <div class="form-group">
 
-                        <button class="btn btn-lg" style="background-color: #a9a9a957" role="button">Search
+                        <button class="btn btn-lg" role="button" id="searchByButton">Search
                             by</button>
 
                         <select class="form-control form-control-lg" name="authorName">
@@ -102,26 +101,24 @@
 
 
     <div class="container">
-        <p style="margin: 40px 40px 0px 30px"><b>All Projects</b> <small class="text-muted">(4 results)</small></p>
+        <p id="searchP2"><strong>All Projects</strong> <small class="text-muted">(4 results)</small></p>
 
-        <div class="row" style="margin: 10px">
+        <div class="row" id="searchRow2">
 
             <div class="col-md-3 order-4">
 
-                <div class="card" style="padding: 20px">
+                <div class="card" id="searchRow2Card1">
 
                     <div class="card-block">
 
-                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 1
+                        <h6 class="card-title" id="searchH6">Project 1
                         </h6>
 
                         <small class="text-muted">James Li, Ade Brian</small>
 
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis repudiandae
-                            obcaecati
-                            tempora quasi ex incidunt sunt dignissimos minus.<br>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis repudiandae obcaecati tempora quasi ex incidunt sunt dignissimos minus.<br>
 
-                            <span style="color: dodgerblue">#javascript, #mongodb</span>
+                            <span class="searchSpanColor">#javascript, #mongodb</span>
                         </p>
 
                     </div>
@@ -132,20 +129,18 @@
 
             <div class="col-md-3 order-3">
 
-                <div class="card" style="padding: 20px">
+                <div class="card searchCard">
 
                     <div class="card-block">
 
-                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 2
+                        <h6 class="card-title searchCardTitleH6">Project 2
                         </h6>
 
                         <small class="text-muted">Fried Lim, Tola Daniel</small>
 
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vitae
-                            magni minima.
-                            Quisquam, hic debitis? Voluptates, minima iure.<br>
+                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae vitae magni minima. Quisquam, hic debitis? Voluptates, minima iure.<br>
 
-                            <span style="color: dodgerblue">#ejs, #ci</span>
+                            <span class="searchSpanColor">#ejs, #ci</span>
                         </p>
 
                     </div>
@@ -156,19 +151,18 @@
 
             <div class="col-md-3 order-2">
 
-                <div class="card" style="padding: 20px">
+                <div class="card searchCard">
 
                     <div class="card-block">
 
-                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 3
+                        <h6 class="card-title searchCardTitleH6">Project 3
                         </h6>
 
                         <small class="text-muted">Ben Rice, Ade Sola</small>
 
-                        <p class="card-text">Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra,
-                            mobly napster hipmunk prezi chartly bitly Zillow lala, sifteo.<br>
+                        <p class="card-text">Webtwo ipsum orkut reddit meebo skype vimeo jajah spock empressr zimbra, mobly napster hipmunk prezi chartly bitly Zillow lala, sifteo.<br>
 
-                            <span style="color: dodgerblue">#css, #html</span>
+                            <span class="searchSpanColor">#css, #html</span>
                         </p>
 
                     </div>
@@ -179,20 +173,18 @@
 
             <div class="col-md-3 order-1">
 
-                <div class="card" style="padding: 20px">
+                <div class="card searchCard">
 
                     <div class="card-block">
 
-                        <h6 class="card-title" style="font-size: 20px; margin-bottom: 0px; color: dodgerblue">Project 4
+                        <h6 class="card-title searchCardTitleH6">Project 4
                         </h6>
 
                         <small class="text-muted">Henry James, Bola Ade</small>
 
-                        <p class="card-text">Swearem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                            scelerisque accumsan nisl, a mattis eros vestibulum
-                            et ligula porttitor.<br>
+                        <p class="card-text">Swearem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam scelerisque accumsan nisl, a mattis eros vestibulum et ligula porttitor.<br>
 
-                            <span style="color: dodgerblue">#yaml, #ejs</span>
+                            <span class="searchSpanColor">#yaml, #ejs</span>
                         </p>
 
                     </div>
@@ -208,15 +200,15 @@
 
     <footer class="container">
 
-        <div class=""
-            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+        <div class="footerDiv">
             <p class="text-muted">
                 Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
             </p>
         </div>
     </footer>
 
-    <script src="js/app.js"> </script>
+    <script src="js/app.js">
+    </script>
 </body>
 
 </html>

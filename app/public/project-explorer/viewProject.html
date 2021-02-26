@@ -7,28 +7,15 @@
     <title>View Project Page</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!--     <nav>
-        <a href="index.html"><label>Project Explorer</label></a>
-        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
-        <button type="submit">Search</button>
-        <a href="search.html">Projects</a>
-        <a href="createProject.html" ">Submit</a>
-                            <a href="login.html">Login</a>
-        <a href="register.html">Sign Up</a>
-    
-    </nav> -->
-
-    <!-- The Navbar -->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <a href="index.html" class="navbar-brand">Project Explorer</a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav" aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -73,8 +60,7 @@
             <p id="project_name"></p>
 
         </div>
-        <div class="row  align-items-center"
-            style="background-color: lightgray; margin: 0px auto 20px 20px; padding: 5px 0px 5px 10px">
+        <div class="row  align-items-center" id="vpRow1">
 
             <div class="col-md-10">
 
@@ -86,13 +72,11 @@
                     </div>
 
                     <div class="col-md-4">
-                        Date Created<br>
-                        03/03/2020
+                        Date Created<br> 03/03/2020
                     </div>
 
                     <div class="col-md-4">
-                        Last Updated<br>
-                        04/04/2020
+                        Last Updated<br> 04/04/2020
                     </div>
 
                 </div>
@@ -113,7 +97,7 @@
 
         <div class="row">
 
-            <div class="col-md-6" style="padding-right: 10px; padding-left: 32px" id="project_abstract">
+            <div class="col-md-6" id="project_abstract">
 
                 <h3>Project Abstract</h3>
                 <!-- <p>
@@ -136,15 +120,12 @@
 
                     <div class="card-block" id="project_authors">
 
-                        <!-- <p class="card-text" style="padding: 10px 0 0 20px"></p>
-                        <hr>
-                        <p class="card-text" style="padding: 0 0 10px 20px"></p> -->
 
                     </div>
 
                     <div class="card-footer" id="project_tags">
 
-                        <!-- <small style="color: dodgerblue; font-size: 15px;"></small> -->
+
 
                     </div>
 
@@ -156,7 +137,7 @@
 
                         </div>
 
-                        <div class="card-block" style="text-align: center; padding-top: 10px; padding-bottom: 10px">
+                        <div class="card-block" id="vpCardBlock">
 
                             <p class="card-text">No file uploaded yet</p>
 
@@ -169,10 +150,9 @@
             </div>
 
         </div>
-        <footer>
+        <footer class="container">
 
-            <div
-                style="background-color: lightgrey; text-align: right; margin: 20px 0px 0px 16px; padding: 5px 20px 3px 20px; font-size: 16px;">
+            <div class="footerDiv">
 
                 <p class="text-muted">
                     Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
@@ -180,7 +160,8 @@
             </div>
         </footer>
 
-        <script src="js/app.js"> </script>
+        <script src="js/app.js">
+        </script>
 </body>
 
 </html>

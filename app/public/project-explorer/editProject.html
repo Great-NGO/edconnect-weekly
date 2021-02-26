@@ -6,39 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Profile Page</title>
 
-
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!--  <nav>
-        <a href="index.html"><label>Project Explorer</label></a>
-        <input id="search_term" type="text" placeholder="Search Projects" value="Search Projects">
-        <button type="submit">Search</button>
-        <a href="search.html">Projects</a>
-        <a href="createProject.html" ">Submit</a>
-         <a href="login.html">Login</a>
-        <a href="register.html">Sign Up</a>
-    
-    </nav>
- -->
-
     <!-- The Navabar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
         <a href="index.html" class="navbar-brand">Project Explorer</a>
-    
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-            aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav" aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-    
+
         <div class="collapse navbar-collapse" id="#responsive-nav">
             <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
                 <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
                 <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
             </form>
-    
+
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
                     <a class="nav-link" href="search.html" title="Projects">Projects</a>
@@ -47,7 +34,7 @@
                     <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
                 </li>
             </ul>
-    
+
             <ul class="navbar-nav mr-sm-2">
                 <li class="nav-item">
                     <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
@@ -55,13 +42,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="login.html" title="Login Page">Login</a>
                 </li>
-    
+
                 <span id="username" style="display: none;"> </span>
-    
+
                 <li class="nav-item">
                     <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
                 </li>
-    
+
             </ul>
         </div>
     </nav>
@@ -70,10 +57,9 @@
 
     <div class="container">
 
-        <h2 style="margin: 40px 0 10px 20px">Project 4</h2>
+        <h2 id="epProjH2">Project 4</h2>
 
-        <div class="row  align-items-center"
-            style="background-color: gainsboro; margin: 0px auto 20px 20px; padding: 5px 0px 5px 10px">
+        <div class="row  align-items-center" id="epRow">
 
             <div class="col-md-10">
 
@@ -87,13 +73,11 @@
 
 
                     <div class="col-md-4">
-                        Date Created<br>
-                        03/03/2020
+                        Date Created<br> 03/03/2020
                     </div>
 
                     <div class="col-md-4">
-                        Last Updated<br>
-                        04/04/2020
+                        Last Updated<br> 04/04/2020
                     </div>
 
                 </div>
@@ -112,7 +96,7 @@
 
         <form method="POST" action="" enctype="text/plain">
 
-            <div class="row" style="margin: 0px -16px 0px 3px">
+            <div class="row" id="epFormRow">
 
                 <div class="col-md-6">
 
@@ -132,8 +116,7 @@
 
                         <label>Project Abstract</label>
 
-                        <textarea class="form-control" name="abstract" size="20" maxlength="100" rows="10" cols="56"
-                            placeholder="Maximum of 100 characters">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. adipisicing elit. Veritatis, dolorum nisi! Tempora nemo quibusdam soluta mollitia accusantium. Exercitationem, saepe. Placeat hic iusto perspiciatis asperiores fugiat?</textarea>
+                        <textarea class="form-control" name="abstract" size="20" maxlength="100" rows="10" cols="56" placeholder="Maximum of 100 characters">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet. adipisicing elit. Veritatis, dolorum nisi! Tempora nemo quibusdam soluta mollitia accusantium. Exercitationem, saepe. Placeat hic iusto perspiciatis asperiores fugiat?</textarea>
 
                     </fieldset>
 
@@ -141,8 +124,7 @@
 
                         <label>Author(s)</label>
 
-                        <input class="form-control" type="text" name="authors" size="74" maxlength="50"
-                            value="Ade James, Brian Olaoluwa">
+                        <input class="form-control" type="text" name="authors" size="74" maxlength="50" value="Ade James, Brian Olaoluwa">
 
                     </fieldset>
 
@@ -150,8 +132,7 @@
 
                         <label>Tag(s)</label>
 
-                        <input class="form-control" type="text" name="tags" size="74" maxlength="50"
-                            value="#yaml, #ejs">
+                        <input class="form-control" type="text" name="tags" size="74" maxlength="50" value="#yaml, #ejs">
 
                     </fieldset>
 
@@ -179,7 +160,7 @@
 
                         </div>
 
-                        <div class="card-block" style="text-align: center; padding-top: 10px; padding-bottom: 10px">
+                        <div class="card-block" id="epCardBlock">
 
                             <p class="card-text">No file uploaded yet</p>
 
@@ -196,8 +177,7 @@
     </div>
     <footer class="container">
 
-        <div class=""
-            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+        <div class="footerDiv">
 
             <p class="text-muted">
 
@@ -209,7 +189,8 @@
 
     </footer>
 
-    <script src="js/app.js"> </script>
+    <script src="js/app.js">
+    </script>
 </body>
 
 </html>

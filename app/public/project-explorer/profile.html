@@ -7,60 +7,59 @@
     <title>Profile Page</title>
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
     <!-- The Navbar -->
 
-<nav class="navbar navbar-expand-md navbar-dark bg-secondary">
-    <a href="index.html" class="navbar-brand">Project Explorer</a>
+    <nav class="navbar navbar-expand-md navbar-dark bg-secondary">
+        <a href="index.html" class="navbar-brand">Project Explorer</a>
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav"
-        aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsive-nav" aria-controls="#responsive-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="#responsive-nav">
-        <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
-            <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <div class="collapse navbar-collapse" id="#responsive-nav">
+            <form class="form-inline my-2 my-lg-0 pull-xs-left" method="POST" action="" enctype="text/plain">
+                <input class="form-control" type="search" aria-label="Search" placeholder="Search Projects">&nbsp;
+                <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
 
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="search.html" title="Projects">Projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
-            </li>
-        </ul>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html" title="Projects">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="createProject.html" title="Submit Project">Submit</a>
+                </li>
+            </ul>
 
-        <ul class="navbar-nav mr-sm-2">
-            <li class="nav-item">
-                <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="login.html" title="Login Page">Login</a>
-            </li>
+            <ul class="navbar-nav mr-sm-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="register.html" title="Sign up">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html" title="Login Page">Login</a>
+                </li>
 
-            <span id="username" style="display: none;"> </span>
+                <span id="username" style="display: none;"> </span>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" title="SignOut" style="display: none;" id="logout">Logout</a>
+                </li>
 
-        </ul>
-    </div>
-</nav>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Main body -->
 
 
     <div class="container">
 
-        <p style="margin: 40px auto 20px 20px"><span style="font-weight: bold; font-size: 20px">Okey Seun</span>
+        <p class="profP"><span> <strong>Okey Seun</strong> </span>
 
             <small class="text-muted">okey@edconnect.ng</small>
 
@@ -70,31 +69,25 @@
 
             <div class="col-md-4">
 
-                Program<br>
-
-                Computer Science
+                Program<br> Computer Science
 
             </div>
 
             <div class="col-md-4">
 
-                Matriculation number<br>
-
-                15/1012
+                Matriculation number<br> 15/1012
 
             </div>
 
             <div class="col-md-4">
 
-                Graduation Year<br>
-
-                2019
+                Graduation Year<br> 2019
 
             </div>
 
         </div>
 
-        <p style="margin: 40px auto 20px 20px"><span style="font-size: 20px">Update Profile</span></p>
+        <p class="profP"><span>Update Profile</span></p>
 
         <hr>
 
@@ -102,7 +95,7 @@
 
             <form method="POST" action="" enctype="text/plain">
 
-                <div class="row" style="margin-right: 10%; margin-left: 10%">
+                <div class="row" id="profDiv">
 
                     <div class="col-md-6">
 
@@ -112,8 +105,7 @@
 
                             <label>First Name</label>
 
-                            <input class="form-control" type="text" name="firstName" size="74" maxlength="30"
-                                value="Okey">
+                            <input class="form-control" type="text" name="firstName" size="74" maxlength="30" value="Okey">
                             </p>
 
                         </fieldset>
@@ -122,8 +114,7 @@
 
                             <label>Email Address</label>
 
-                            <input class="form-control" type="email" name="email" size="74" maxlength="50"
-                                value="okey@edconnect.ng"></p>
+                            <input class="form-control" type="email" name="email" size="74" maxlength="50" value="okey@edconnect.ng"></p>
 
                         </fieldset>
 
@@ -131,8 +122,7 @@
 
                             <label>Matriculation Number</label>
 
-                            <input class="form-control" type="text" name="matricNumber" size="74" maxlength="8"
-                                value="15/1012">
+                            <input class="form-control" type="text" name="matricNumber" size="74" maxlength="8" value="15/1012">
 
                         </fieldset>
 
@@ -146,8 +136,7 @@
 
                             <label>Last Name</label>
 
-                            <input class="form-control" type="text" name="lastName" size="74" maxlength="30"
-                                value=" Seun"></p>
+                            <input class="form-control" type="text" name="lastName" size="74" maxlength="30" value=" Seun"></p>
 
                         </fieldset>
 
@@ -228,7 +217,7 @@
 
         </div>
 
-        <p style="margin: 20px auto"><span style="font-size: 20px">Change Password</span></p>
+        <p id="profP2"><span>Change Password</span></p>
 
         <hr>
 
@@ -242,8 +231,7 @@
 
                         <label>Current Password</label>
 
-                        <input class="form-control" type="password" name="currentPassword" maxlength="30"
-                            placeholder="Current Password">
+                        <input class="form-control" type="password" name="currentPassword" maxlength="30" placeholder="Current Password">
 
                     </fieldset>
 
@@ -257,8 +245,7 @@
 
                         <label>New Password</label>
 
-                        <input class="form-control" type="password" name="newPassword" maxlength="30"
-                            placeholder="Your new password">
+                        <input class="form-control" type="password" name="newPassword" maxlength="30" placeholder="Your new password">
 
                     </fieldset>
 
@@ -270,8 +257,7 @@
 
                         <label>Confirm Password</label>
 
-                        <input class="form-control" type="password" name="confirmPassword" maxlength="30"
-                            placeholder="Confirm new password">
+                        <input class="form-control" type="password" name="confirmPassword" maxlength="30" placeholder="Confirm new password">
 
                     </fieldset>
 
@@ -286,15 +272,15 @@
 
 
     <footer class="container">
-        <div class=""
-            style="background-color: gainsboro; text-align: right; margin: 20px 0 10px; max-width: px; padding: 5px 20px 3px 20px">
+        <div class="footerDiv">
             <p class="text-muted">
                 Project Explorer &#64; 2020 <strong>Great-NGO Edconnect </strong>
             </p>
         </div>
     </footer>
 
-    <script src="js/app.js"> </script>
+    <script src="js/app.js">
+    </script>
 </body>
 
 </html>
