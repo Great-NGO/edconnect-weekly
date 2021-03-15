@@ -1,0 +1,168 @@
+/* /Styling All Pages ... NB: All Pages are by default styled with Bootstrap, this is to add extra styling */
+
+
+/* Index Page */
+
+.jumbotron {
+  margin: 15px auto;
+  max-width: 1100px;
+}
+
+#showcase {
+  margin: 20px auto;
+}
+
+
+/* General footer Div styling */
+
+.footerDiv {
+  background-color: gainsboro;
+  text-align: right;
+  margin: 20px 0 10px;
+  padding: 5px 20px 3px 20px;
+  max-width: px;
+}
+
+
+/* Login page */
+
+#loginContainer {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+
+/* createProject Page */
+
+#projH3 {
+  margin-top: 20px;
+}
+
+
+/* edit Project Page */
+
+#epProjH2 {
+  margin: 20px 0 10px 20px;
+}
+
+#epRow {
+  background-color: gainsboro;
+  margin: 0px auto 20px 20px;
+  padding: 5px 0px 5px 10px;
+}
+
+#epFormRow {
+  margin: 0px -16px 0px 3px;
+}
+
+#epCardBlock {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+/* profile Page */
+
+.profP {
+  margin: 40px auto 20px 20px;
+}
+
+.profP span {
+  font-size: 20px;
+}
+
+#profDiv {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+#profP2 {
+  margin: 20px auto;
+}
+
+#profP2 span {
+  font-size: 20px;
+}
+
+
+/* register/sign Up Page*/
+
+#signupForm h2 {
+  padding-top: 20px;
+}
+
+#rBtn1 {
+  margin-top: -10px;
+}
+
+
+/* search Page */
+
+#searchP1 {
+  margin: 40px 0px 20px 0px;
+  font-weight: bold;
+  font-size: 30px
+}
+
+#searchRow1 {
+  background-color: lightgray;
+  padding: 10px 5px 10px 0px;
+  margin: auto;
+}
+
+#searchByButton {
+  background-color: #a9a9a957;
+}
+
+#searchP2 {
+  margin: 40px 40px 0px 30px;
+}
+
+#searchRow2 {
+  margin: 10px;
+}
+
+#searchRow2Card1 {
+  padding: 20px;
+}
+
+#searchH6 {
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: dodgerblue;
+}
+
+.searchSpanColor {
+  color: dodgerblue;
+}
+
+.searchCard {
+  padding: 20px;
+}
+
+.searchCardTitleH6 {
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: dodgerblue;
+}
+
+
+/* view Project Page */
+
+#vpRow1 {
+  background-color: lightgray;
+  margin: 0px auto 20px 20px;
+  padding: 5px 0px 5px 10px;
+}
+
+#project_abstract {
+  padding-right: 10px;
+  padding-left: 32px;
+}
+
+#vpCardBlock {
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
