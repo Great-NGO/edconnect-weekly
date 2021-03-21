@@ -51,7 +51,7 @@ const Login = () => {
     <Layout>
       <>
         <Container fluid="md">
-          <Form className="border rounded p-5 mt-5" onSubmit={handleFormSubmit}>
+          <Form className="border rounded p-5 mt-5" onSubmit={handleFormSubmit} id="loginForm">
             <h1>LOGIN</h1>
             {error.length > 1 ? (
               <Alert variant="danger" key={error}>
