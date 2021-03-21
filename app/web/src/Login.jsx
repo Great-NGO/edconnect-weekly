@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Layout from "./shared/Layout";
 import { Form, Button, Container, Alert } from "react-bootstrap";
-// import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState([]);
-//   const history = useHistory();
+  const history = useHistory();
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
@@ -33,9 +33,9 @@ const Login = () => {
 
         if (resp.status === 200) {
           console.log("Login Success: ", data);
-          document.cookie = `uid=${data.data.id};path=/`;
-        //   history.push("/");
-          window.location.href = "/";
+          document.cookie = `uid=${data.data.id};path=/;max-age=60*60*24*30`;
+          history.push("/");
+          // window.location.href = "/";
           return resp;
         } else if (resp.status !== 200) {
           console.log(resp.errors);
@@ -51,7 +51,11 @@ const Login = () => {
     <Layout>
       <>
         <Container fluid="md">
-          <Form className="border rounded p-5 mt-5" onSubmit={handleFormSubmit} id="loginForm">
+          <Form
+            className="border rounded p-5 mt-5"
+            onSubmit={handleFormSubmit}
+            id="loginForm"
+          >
             <h1>LOGIN</h1>
             {error.length > 1 ? (
               <Alert variant="danger" key={error}>
