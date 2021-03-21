@@ -2,15 +2,18 @@ import React, { useState, useEffect } from "react";
 import Layout from "./shared/Layout";
 import { Form, Col, Button, Container, Alert } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
+// import cookie from "cookie";
 
 //Three fetch is done, the first two is to get the list of program and graduation years from their respective APIs to populate our sign up form select tag, the next is to extract input and make a post request
 const Signup = () => {
+  // For history routing
+  const history = useHistory();
+
   //First Fetch request - Program Data, which returns a list of programs. It is put in a useEffect so it runs only once
   const [programData, setProgramData] = useState([]);
 
   //Second Fetch request - Graduation Years Data, which returns a list of graduation years. It is put in a useEffect so it runs only once
   const [gradYearData, setGradYearData] = useState([]);
-
   useEffect(() => {
     fetch("/api/programs")
       .then((response) => response.json())
@@ -32,55 +35,58 @@ const Signup = () => {
       .catch((err) => console.log("Graduation Year error is: " + err));
   }, []);
 
-  const [state, setState] = useState([]);
-  const [error, setError] = useState();
-  const history = useHistory;
-
+ 
   /* Using and declaring the useState hook and onChange Event to get the users input */
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [program, setProgram] = useState();
+  const [matricNo, setMatricNo] = useState("");
+  const [gradYear, setGradYear] = useState();
+
+  // For Error Div
+  const [error, setError] = useState([]);
 
   /* END OF DECLARATION */
 
-  // Handling Input
-  const handleInputChange = (evt) => {
-    const value = evt.target.value;
-    //spread the state back into the new state value
-    setState({ ...state, [evt.target.name]: value });
-    console.log(evt.target.value);
-  };
-
-  //Cookie function
-  function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
-    var expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + "; " + expires;
-  }
   // Submission Logic
   const handleFormSubmit = (event) => {
     event.preventDefault();
-
     console.log("WORKINGGGGG");
+
+    const formData = {
+      firstname: firstName,
+      lastname: lastName,
+      email: email,
+      password: password,
+      program: program,
+      matricNumber: matricNo,
+      graduationYear: gradYear,
+    };
 
     fetch("/api/register", {
       method: "POST",
-      body: JSON.stringify(state),
+      body: JSON.stringify(formData),
       headers: { "Content-Type": "application/json" },
     })
-      .then((res) => {
-        console.log(res);
-        return res.json();
-      })
-      .then((data) => {
-        if (data.status === "ok") {
-          console.log("YESoo");
-          setCookie("uid", data.data.id, "30");
+      .then(async (res) => {
+        console.log(formData);
+
+        if (res.status === 200) {
+          let data = await res.json();
+
+          console.log("200 !!");
+          // cookie.createCookie("uid", data.data.id, "30");
+          document.cookie = `uid=${data.data.id};path=/;max-age=60*60*24*30`;
           history.push("/");
-          return data;
+
+          return res;
         } 
-        if (data.status !== "ok") {
-          let err = data;
+        else if (res.status !== 200) {
+          let err = await res.json();
+          console.log("Not 200!");
           setError(err.errors);
-          console.log(err);
         }
       })
       .catch((err) => {
@@ -88,25 +94,62 @@ const Signup = () => {
       });
   };
 
+  //For Handling Input 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+
+    console.log(event.target.value);
+
+    switch (name) {
+      case "firstName":
+        setFirstName(value);
+        // console.log(event.target.value)
+        break;
+      case "lastName":
+        setLastName(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      case "program":
+        setProgram(value);
+        break;
+      case "matricNo":
+        setMatricNo(value);
+        break;
+      case "gradYear":
+        setGradYear(value);
+        break;
+      default:
+    }
+  };
+
   return (
     <Layout>
       <>
         <Container fluid="md">
           <Form className="border rounded p-5 mt-5" onSubmit={handleFormSubmit}>
-            <Form.Row>
-              <h1>Sign Up</h1>
-              {error &&
-                error.map((err) => <Alert variant="danger">{err}</Alert>)}
-            </Form.Row>
+            <h1>Sign Up</h1>
+            {error &&
+              error.map((err) => (
+                <Alert variant="danger" key={err}>
+                  {err}
+                </Alert>
+              ))}
+
             <Form.Row>
               <Form.Group as={Col} controlId="formGridFirstName">
                 <Form.Label>First Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="First name"
-                  value={state.firstName}
+                  value={firstName}
+                  name="firstName"
                   onChange={handleInputChange}
-                  required
+                  // required
                 />
               </Form.Group>
 
@@ -115,9 +158,9 @@ const Signup = () => {
                 <Form.Control
                   type="text"
                   placeholder="Last name"
-                  value={state.lastName}
+                  value={lastName}
+                  name="lastName"
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
             </Form.Row>
@@ -128,9 +171,9 @@ const Signup = () => {
                 <Form.Control
                   type="email"
                   placeholder="Enter your email"
-                  value={state.email}
+                  value={email}
+                  name="email"
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
@@ -139,9 +182,9 @@ const Signup = () => {
                 <Form.Control
                   type="password"
                   placeholder="Password"
-                  value={state.password}
+                  value={password}
+                  name="password"
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
             </Form.Row>
@@ -152,9 +195,9 @@ const Signup = () => {
                 <Form.Control
                   as="select"
                   // defaultValue="Choose..."
-                  value={state.program}
+                  value={program}
+                  name="program"
                   onChange={handleInputChange}
-                  required
                 >
                   <option>Choose...</option>
                   {programData &&
@@ -168,9 +211,9 @@ const Signup = () => {
                 <Form.Label>Matriculation Number</Form.Label>
                 <Form.Control
                   placeholder="e.g 16/2020"
-                  value={state.matricNo}
+                  value={matricNo}
+                  name="matricNo"
                   onChange={handleInputChange}
-                  required
                 />
               </Form.Group>
 
@@ -179,9 +222,9 @@ const Signup = () => {
                 <Form.Control
                   as="select"
                   // defaultValue="Choose..."
-                  value={state.gradYear}
+                  value={gradYear}
+                  name="gradYear"
                   onChange={handleInputChange}
-                  required
                 >
                   <option>Choose...</option>
                   {gradYearData &&
@@ -203,3 +246,4 @@ const Signup = () => {
 };
 
 export default Signup;
+

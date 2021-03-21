@@ -40,11 +40,11 @@ const Home = () => {
           </p>
         </Jumbotron>
         <Container fluid="md">
-          <Row>
-            {projects&&projects.slice(0, 4).map((project) => (
-                <Col key={project.id}>
-                  <Card>
-                    <Card.Body link="#" >
+          <Row className="showcase">
+            {projects&&projects.slice(0,4).map((project) => (
+                <Col key={project.id} className="projCard" size="md">
+                  <Card onClick={()=> {window.location.href= `Projects/${project.id}`}}>
+                    <Card.Body >
                       <Card.Title>{project.name}</Card.Title>
                       <Card.Link href="#">
                         {project.authors.join(",")}
