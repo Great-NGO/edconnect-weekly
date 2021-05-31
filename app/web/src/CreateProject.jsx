@@ -54,29 +54,30 @@ const CreateProject = (props) => {
     event.preventDefault();
     console.log("Hmm");
 
-    const createProjectFromData = {
+    const createProjectFormData = {
       name: name,
       abstract: abstract,
       authors: authors,
-      tags: tags,
+      tags: tags
     };
 
     fetch("/api/projects", {
       method: "POST",
-      body: JSON.stringify(createProjectFromData),
+      body: JSON.stringify(createProjectFormData),
       headers: {
         "Content-Type": "application/json",
       },
     }).then(async (resp) => {
       let data = await resp.json();
+      if (resp.status !== 200) {
+        console.log(data.errors);
+        setError(data.errors);
+      }
       if (resp.status === 200) {
         console.log("SUCCESS!... Project Creation a success");
         history.push("/");
         // window.location.href = "/"; /* You can also do this*/
-      } else if (resp.status !== 200) {
-        console.log(data.errors);
-        setError(data.errors);
-      }
+      } 
     });
   };
 

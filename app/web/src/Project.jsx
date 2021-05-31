@@ -12,11 +12,6 @@ const Project = () => {
   const [projTags, setProjTags] = useState([]);
   const [createdBy, setCreatedBy] = useState("");
 
-  // const projtagsStyle = {
-  //   style : "dodgerblue",
-  //   fontSize: "15px"
-  // }
-
   useEffect(() => {
     let id = params.id;
     console.log(`The id is: ${id}`);
