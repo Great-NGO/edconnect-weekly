@@ -9,7 +9,7 @@ const SERVER_PORT = process.env.SERVER_PORT;
 
 const register = require("@react-ssr/express/register");
 
-
+const flash = require('express-flash');
 register(app).then(()=> {
 
     // All app code here
@@ -35,9 +35,17 @@ register(app).then(()=> {
     }));
     
     app.use('/api', require('./routes/api'));
+    app.use(flash());
+
+    // Routes
+    app.use('/', require("./controllers/home"));
+    app.use('/', require("./controllers/user"));
+    app.use('/', require("./controllers/project"));
     app.use(express.static('public'));
     
     app.listen(SERVER_PORT, () => console.log('Server listening on port ' + SERVER_PORT));
 
-
+})
+.catch((err) => {
+    console.log(err);
 })
