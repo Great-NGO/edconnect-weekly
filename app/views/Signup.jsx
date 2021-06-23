@@ -54,7 +54,7 @@ const Signup = (props) => {
     <Layout user={user}>
       <>
         <Container fluid="md">
-          <Form className="border rounded p-5 mt-5" method="post" action="signup">
+          <Form className="border rounded p-5 mt-5" method="post" action="signup" id="signupForm">
             <h1>Sign Up</h1>
             {error &&
               error.map((err) => (
