@@ -7,7 +7,7 @@ router.get('/projects/submit', (req, res) => {
 
     const user = req.session.user;
 
-    if(user == undefined){
+    if(!user){
         res.status(301).redirect('/login');
     }
 
