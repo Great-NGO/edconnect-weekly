@@ -9,8 +9,8 @@ const Signup = (props) => {
   const { programs, gradYears, error, retainedDetails, user } = props; //errors
   console.log(programs, gradYears, retainedDetails);   //errors
 
-  const [firstname, setFirstname] = useState(retainedDetails[0]?.firstname || '');
-  const [lastname, setLastname] = useState(retainedDetails[0]?.lastname || '');
+  const [firstName, setFirstName] = useState(retainedDetails[0]?.firstName || '');
+  const [lastName, setLastName] = useState(retainedDetails[0]?.lastName || '');
   const [email, setEmail] = useState(retainedDetails[0]?.email || '');
   const [password, setPassword] = useState(retainedDetails[0]?.password || '');
   const [matricNumber, setMatricNumber] = useState(retainedDetails[0]?.matricNumber || '');
@@ -24,11 +24,11 @@ const Signup = (props) => {
     console.log(event.target.value);
 
     switch (name) {
-      case "firstname":
-        setFirstname(value);
+      case "firstName":
+        setFirstName(value);
         break;
-      case "lastname":
-        setLastname(value);
+      case "lastName":
+        setLastName(value);
         break;
       case "email":
         setEmail(value);
@@ -69,8 +69,8 @@ const Signup = (props) => {
                 <Form.Control
                   type="text"
                   placeholder="First name"
-                  value={firstname}
-                  name="firstname"
+                  value={firstName}
+                  name="firstName"
                   onChange={handleInputChange}
                   // required
                 />
@@ -81,8 +81,8 @@ const Signup = (props) => {
                 <Form.Control
                   type="text"
                   placeholder="Last name"
-                  value={lastname}
-                  name="lastname"
+                  value={lastName}
+                  name="lastName"
                   onChange={handleInputChange}
                 />
               </Form.Group>

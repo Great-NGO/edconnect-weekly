@@ -19,7 +19,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res) => {
     // console.log(req.body); what is inside the req.body is an object { firstname, lastname, email, password, program, matricNumber, graduationYear}
-    let newUser = { firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email, password: req.body.password, matricNumber: req.body.matricNumber, program: req.body.program, graduationYear: req.body.graduationYear }
+    let newUser = { firstname: req.body.firstName, lastname: req.body.lastName, email: req.body.email, password: req.body.password, matricNumber: req.body.matricNumber, program: req.body.program, graduationYear: req.body.graduationYear }
     // console.log(newUser);
     console.log(req.body);
     req.flash("retainedDetails", req.body);

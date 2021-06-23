@@ -61,8 +61,8 @@ router.post('/projects/submit', (req, res) => {
         console.log(userId);
 
         const masterUser = getById(userId);
-
-        console.log(masteruser);
+      
+        console.log(masterUser);
         const {firstname, lastname} = masterUser;
         const createdBy = `${firstname} ${lastname}`;
         console.log(createdBy);
