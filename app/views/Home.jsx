@@ -32,15 +32,14 @@ console.log(allProjects, user);
           <Row className="showcase">
             {allProjects&&allProjects.slice(0,4).map((project) => (
                 <Col key={project.id} className="projCard" size="md">
-                  <Card>
-                    <Card.Body >
-                    
-                      <Card.Title> <a href={`/project/${project.id}`}>{project.name} </a>  </Card.Title>
-                      <Card.Link href="#">
+                  <Card keys={project.id}>
+                    <Card.Body keys={project.id}>
+                      <Card.Title keys={project.name}> <a href={`/project/${project.id}`} keys={project.name}>{project.name} </a>  </Card.Title>
+                      <Card.Link href="#" keys={project.authors}>
                         {project.authors.join(",")}
                       </Card.Link>
-                      <Card.Text>{project.abstract}</Card.Text>
-                      <Card.Link href="#"> {project.tags.join('#')}</Card.Link>
+                      <Card.Text keys={project.abstract}>{project.abstract}</Card.Text>
+                      <Card.Link href="#" keys={project.tags}> {project.tags.join('#')}</Card.Link>
                     </Card.Body>
                   </Card>
                 </Col>
