@@ -20,10 +20,10 @@ console.log(allProjects, user);
             search projects submitted by others to learn from.
           </p>
           <p>
-            <a className="btn btn-primary" href="Signup">
+            <a className="btn btn-primary" href="signup">
               Get Started
             </a>
-            <a className="btn btn-secondary" href="Login">
+            <a className="btn btn-secondary" href="login">
               Login 
             </a>
           </p>
@@ -34,12 +34,12 @@ console.log(allProjects, user);
                 <Col key={project.id} className="projCard" size="md">
                   <Card keys={project.id}>
                     <Card.Body keys={project.id}>
-                      <Card.Title keys={project.name}> <a href={`/project/${project.id}`} keys={project.name}>{project.name} </a>  </Card.Title>
-                      <Card.Link href="#" keys={project.authors}>
+                      <Card.Title> <a href={`/project/${project.id}`} keys={project.name}>{project.name} </a>  </Card.Title>
+                      <Card.Link href="#">
                         {project.authors.join(",")}
                       </Card.Link>
-                      <Card.Text keys={project.abstract}>{project.abstract}</Card.Text>
-                      <Card.Link href="#" keys={project.tags}> {project.tags.join('#')}</Card.Link>
+                      <Card.Text >{project.abstract}</Card.Text>
+                      <Card.Link href="#"> {project.tags.join('#')}</Card.Link>
                     </Card.Body>
                   </Card>
                 </Col>

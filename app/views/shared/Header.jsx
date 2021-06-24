@@ -63,10 +63,10 @@ const Header = (props) => {
             </>
           ) : 
             <>
-              <Nav.Link href="/Signup" id="signup">
+              <Nav.Link href="/signup" id="signup">
                 Sign Up
               </Nav.Link>
-              <Nav.Link eventKey={2} href="/Login" id="login">
+              <Nav.Link eventKey={2} href="/login" id="login">
                 Login
               </Nav.Link>
             </>
